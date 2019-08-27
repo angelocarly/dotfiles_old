@@ -29,21 +29,6 @@ font pango:monospace 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# class                 border  backgr. text    indicator child_border
-# client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-# client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-# client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-# client.urgent           #2f343a #900000 #ffffff #900000   #900000
-# client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-# class                 border  backgr. text indicator child_border
-client.focused          #0a0710     #d79921     #0a0710  #000000       #000000
-client.focused_inactive #0a0710     #d79921     #fbf7f6  #000000       #000000
-client.unfocused        #0a0710     #d79921     #fbf7f6  #000000       #000000
-client.urgent           #0a0710     #ff0000     #fbf7f6  #ff0000       #000000
-client.placeholder      #0a0710     #d79921     #fbf7f6  #000000       #000000
-
-client.background       #0a0710<Paste>
-
 # start a terminal
 bindsym $mod+Return exec termite
 
@@ -186,6 +171,11 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # gaps configurations
 gaps inner 10
 
+smart_gaps on
+
+### Disable titlebars to let gaps work properly
+for_window [class="^.*"] border pixel 1
+
 # custom settings
 
 # Screenshots
@@ -223,3 +213,12 @@ exec --no-startup-id compton --config ~/.config/i3/compton.conf
 # exec --no-startup-id dropbox start
 # exec --no-startup-id mopidy &
 # exec --no-startup-id xrandr --output eDP-1-1 --auto --primary --output DP-1-1 --off --output HDMI-0 --auto --off
+
+# Theme colors
+# class                   border  backgr. text    indic.   child_border
+  client.focused          #556064 #556064 #80FFF9 #FDF6E3
+  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
+  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
+  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+  client.placeholder      #000000 #0c0c0c #ffffff #000000 
+  client.background       #2B2C2B
