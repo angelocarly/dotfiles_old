@@ -7,7 +7,7 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
-polybar lamia 2>&1 &
+polybar magnias 2>&1 &
 
 echo "launched polybar"
 
