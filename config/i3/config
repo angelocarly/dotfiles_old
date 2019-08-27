@@ -36,7 +36,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -169,7 +169,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # i3gaps settings
 
 # gaps configurations
-gaps inner 10
+gaps inner 5
 
 smart_gaps on
 
@@ -202,7 +202,7 @@ bindsym Print exec maim -s --format=png /dev/stdout | xclip -selection clipboard
 # bindsym --release Shift+Print exec "scrot -s '{{destination}}/Pictures/screenshots/%s_%H%M_%d%m%Y_$wx$h.png'"
 
 # start programs
-exec_always --no-startup-id feh --bg-fill ~/.config/wallpapers/gumbootsoup.png
+exec_always --no-startup-id feh --bg-fill ~/.config/wallpapers/flcl.png
 # exec_always --no-startup-id ~/.config/polybar/launch.sh &
 # exec_always --no-startup-id flashfocus &
 # exec_always --no-startup-id dunst -config ~/.config/dunst/config &

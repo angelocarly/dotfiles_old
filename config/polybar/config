@@ -55,7 +55,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = mpd xwindow
-modules-right = filesystem xbacklight alsa xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem xbacklight alsa memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
