@@ -215,7 +215,7 @@ exec_always --no-startup-id feh --bg-fill ~/.config/wallpapers/flcl.png
 # exec_always --no-startup-id ~/.config/conky/start &
 
 # exec --no-startup-id xset -dpms s off
-exec --no-startup-id compton --config ~/.config/compton.conf
+# exec --no-startup-id compton --config ~/.config/compton.conf
 # exec --no-startup-id dropbox start
 # exec --no-startup-id mopidy &
 # exec --no-startup-id xrandr --output eDP-1-1 --auto --primary --output DP-1-1 --off --output HDMI-0 --auto --off
