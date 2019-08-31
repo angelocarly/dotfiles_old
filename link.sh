@@ -8,3 +8,4 @@ ln -sT "$wd/home/.config/wallpapers" ~/.config/wallpapers
 ln -sT "$wd/home/.config/kitty" ~/.config/kitty
 ln -sT "$wd/home/.config/dunst" ~/.config/dunst
 ln -sT "$wd/home/.cache/wal" ~/.cache/wal
+ln -sT "$wd/home/.config/rofi" ~/.config/rofi
