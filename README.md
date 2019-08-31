@@ -14,3 +14,4 @@ These packages must be available on your system:
 * alsa
 * siji font
 * pywal
+* dunst

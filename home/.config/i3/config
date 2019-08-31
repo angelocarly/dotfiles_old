@@ -169,14 +169,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
 # i3gaps settings
 
 # gaps configurations
 gaps inner 5
-
 smart_gaps on
 
 ### Disable titlebars to let gaps work properly
@@ -188,9 +184,8 @@ for_window [class="^.*"] border pixel 1
 bindsym Print exec maim -s --format=png /dev/stdout | xclip -selection clipboard -r image/png -i
 
 # binding keys
-# bindsym $mod+Shift+a exec pavucontrol
+bindsym $mod+Shift+w exec pavucontrol
 # bindsym $mod+c exec /usr/bin/horimetro-dialog-create-task
-# bindsym $mod+n exec /usr/local/bin/nvim-gtk
 # bindsym $mod+p exec /usr/bin/lock
 # bindsym $mod+Shift+p exec /usr/bin/lock && systemctl suspend
 
@@ -200,26 +195,30 @@ bindsym Print exec maim -s --format=png /dev/stdout | xclip -selection clipboard
 # bindsym $mod+o exec {{destination}}/.scripts/bin/open-project
 
 # media
-# bindsym XF86AudioMute exec --no-startup-id mpc toggle
-# bindsym XF86AudioRaiseVolume exec --no-startup-id mpc next
-# bindsym XF86AudioLowerVolume exec --no-startup-id mpc prev
+bindsym $mod+Control+Down exec --no-startup-id playerctl play-pause
+bindsym $mod+Control+Right exec --no-startup-id playerctl next
+bindsym $mod+Control+Left exec --no-startup-id playerctl previous
+bindsym $mod+Control+Up exec --no-startup-id playerctl stop
 
 # bindsym --release Print exec "scrot -m '{{destination}}/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png'"
 # bindsym --release Shift+Print exec "scrot -s '{{destination}}/Pictures/screenshots/%s_%H%M_%d%m%Y_$wx$h.png'"
 
 # start programs
-# exec_always --no-startup-id feh --bg-fill ~/.config/wallpapers/flcl.png
-# exec_always --no-startup-id ~/.config/polybar/launch.sh &
 # exec_always --no-startup-id flashfocus &
 # exec_always --no-startup-id dunst -config ~/.config/dunst/config &
 # exec_always --no-startup-id ~/.config/conky/start &
 
+# Brightness
+bindsym $mod+Control+p exec light -A 5% # increase screen brightness
+bindsym $mod+Control+o exec light -U 5% # decrease screen brightness
+
+# start programs
 exec --no-startup-id wal -R
 # exec --no-startup-id xset -dpms s off
 exec --no-startup-id compton --config ~/.config/compton.conf
-# exec --no-startup-id dropbox start
 # exec --no-startup-id mopidy &
 # exec --no-startup-id xrandr --output eDP-1-1 --auto --primary --output DP-1-1 --off --output HDMI-0 --auto --off
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 ###--- i3 coloring ---###
 # Make it clear when failed using red - otherwise set i3 colors with wal from xresources
