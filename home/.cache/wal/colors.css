@@ -5,24 +5,24 @@
 
     /* Special */
     --background: #1a1a1a;
-    --foreground: #856237;
-    --cursor: #ccbaad;
+    --foreground: #d8d8d8;
+    --cursor: #d8d8d8;
 
     /* Colors */
     --color0: #1a1a1a;
-    --color1: #6b4747;
-    --color2: #8d7138;
-    --color3: #856237;
-    --color4: #3c3c49;
-    --color5: #3c342e;
-    --color6: #5d5a4b;
-    --color7: #ccbaad;
-    --color8: #4a4a4a;
-    --color9: #6b4747;
-    --color10: #8d7138;
-    --color11: #856237;
-    --color12: #3c3c49;
-    --color13: #3c342e;
-    --color14: #5d5a4b;
-    --color15: #eae2dc;
+    --color1: #ab4642;
+    --color2: #a1b56c;
+    --color3: #f7ca88;
+    --color4: #7cafc2;
+    --color5: #ba8baf;
+    --color6: #86c1b9;
+    --color7: #d8d8d8;
+    --color8: #585858;
+    --color9: #ab4642;
+    --color10: #a1b56c;
+    --color11: #f7ca88;
+    --color12: #7cafc2;
+    --color13: #ba8baf;
+    --color14: #86c1b9;
+    --color15: #f8f8f8;
 }

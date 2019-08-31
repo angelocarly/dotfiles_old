@@ -12,6 +12,7 @@ ZSH_THEME="blinks-mag"
 
 # Alias
 alias rwal="wal -b 1a1a1a -i ~/.config/wallpapers/current"
+alias cwal="wal -b 1a1a1a --theme random_dark"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
