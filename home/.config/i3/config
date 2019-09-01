@@ -187,9 +187,6 @@ for_window [class="^.*"] border pixel 1
 
 # custom settings
 
-# Screenshots
-bindsym Print exec maim -s --format=png /dev/stdout | xclip -selection clipboard -r image/png -i
-
 # binding keys
 bindsym $mod+Shift+w exec pavucontrol
 # bindsym $mod+c exec /usr/bin/horimetro-dialog-create-task
@@ -202,6 +199,8 @@ bindsym $mod+Shift+w exec pavucontrol
 # bindsym $mod+o exec {{destination}}/.scripts/bin/open-project
 
 # media
+bindsym $mod+KP_Add exec --no-startup-id amixer -D pulse sset Master 5%+
+bindsym $mod+KP_Subtract exec --no-startup-id amixer -D pulse sset Master 5%-
 bindsym $mod+Control+Down exec --no-startup-id playerctl play-pause
 bindsym $mod+Control+Right exec --no-startup-id playerctl next
 bindsym $mod+Control+Left exec --no-startup-id playerctl previous
