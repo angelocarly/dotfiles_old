@@ -7,11 +7,17 @@ Create symbolic links by running link.sh
 ## Requirements
 These packages must be available on your system:
 * i3-gaps
+* polybar
 * compton
 * feh
 * imageMagick
-* light
+* light (screen brightness)
 * alsa
 * siji font
 * pywal
-* dunst
+* dunst (for notifications)
+* pulseaudio/pavucontrol
+* scrot
+
+## Optional
+* kalu

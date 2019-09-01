@@ -11,6 +11,7 @@ export ZSH="/home/magnias/.oh-my-zsh"
 ZSH_THEME="blinks-mag"
 
 # Alias
+alias icat="kitty +kitten icat"
 alias rwal="wal -b 1a1a1a -i ~/.config/wallpapers/current"
 alias cwal="wal -b 1a1a1a --theme random_dark"
 

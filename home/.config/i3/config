@@ -207,8 +207,8 @@ bindsym $mod+Control+Right exec --no-startup-id playerctl next
 bindsym $mod+Control+Left exec --no-startup-id playerctl previous
 bindsym $mod+Control+Up exec --no-startup-id playerctl stop
 
-# bindsym --release Print exec "scrot -m '{{destination}}/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png'"
-# bindsym --release Shift+Print exec "scrot -s '{{destination}}/Pictures/screenshots/%s_%H%M_%d%m%Y_$wx$h.png'"
+bindsym --release Print exec scrot ~/Pictures/screenshots/%Y-%m-%d-%H-%M-%S.png
+bindsym --release Shift+Print exec scrot -s ~/Pictures/screenshots/%Y-%m-%d-%H-%M-%S.png
 
 # Brightness
 bindsym $mod+Control+p exec light -A 5% # increase screen brightness
