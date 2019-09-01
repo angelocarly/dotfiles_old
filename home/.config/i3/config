@@ -39,12 +39,13 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -modi "drun#window#run#ssh" -show drun
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+#========================= Focus ============================
 # Disable mouse hover focus
 focus_follows_mouse no
 
@@ -98,6 +99,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# ============================== Workspaces =====================================
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -134,6 +136,10 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+
+assign [class="Vivaldi"] $ws1
+
+# =========================== Keybinds =================================
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -173,6 +179,7 @@ bindsym $mod+r mode "resize"
 
 # gaps configurations
 gaps inner 5
+gaps outer 1
 smart_gaps on
 
 ### Disable titlebars to let gaps work properly
@@ -203,10 +210,6 @@ bindsym $mod+Control+Up exec --no-startup-id playerctl stop
 # bindsym --release Print exec "scrot -m '{{destination}}/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png'"
 # bindsym --release Shift+Print exec "scrot -s '{{destination}}/Pictures/screenshots/%s_%H%M_%d%m%Y_$wx$h.png'"
 
-# start programs
-# exec_always --no-startup-id flashfocus &
-# exec_always --no-startup-id ~/.config/conky/start &
-
 # Brightness
 bindsym $mod+Control+p exec light -A 5% # increase screen brightness
 bindsym $mod+Control+o exec light -U 5% # decrease screen brightness
@@ -216,26 +219,35 @@ exec --no-startup-id feh --bg-fill ~/.config/wallpapers/current
 exec --no-startup-id wal -R
 # exec --no-startup-id xset -dpms s off
 exec_always --no-startup-id dunst -config ~/.config/dunst/config &
-exec --no-startup-id compton --config ~/.config/compton.conf
 # exec --no-startup-id mopidy &
 # exec --no-startup-id xrandr --output eDP-1-1 --auto --primary --output DP-1-1 --off --output HDMI-0 --auto --off
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id compton --backend glx --config ~/.config/compton.conf
+exec --no-startup-id kalu
 
 # i3 coloring
-# Set colors from Xresources
-# Change 'color7' and 'color2' to whatever colors you want i3 to use 
-# from the generated scheme.
-# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
-# it fails to get colors from Xresources.
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
+ set_from_resource $c0 i3wm.color0 #f0f0f0
+ set_from_resource $c1 i3wm.color1 #f0f0f0
+ set_from_resource $c2 i3wm.color2 #f0f0f0
+ set_from_resource $c3 i3wm.color3 #f0f0f0
+ set_from_resource $c4 i3wm.color4 #f0f0f0
+ set_from_resource $c5 i3wm.color5 #f0f0f0
+ set_from_resource $c6 i3wm.color6 #f0f0f0
+ set_from_resource $c7 i3wm.color7 #f0f0f0
+ set_from_resource $c8 i3wm.color8 #f0f0f0
+ set_from_resource $c9 i3wm.color9 #f0f0f0
+ set_from_resource $c10 i3wm.color10 #f0f0f0
+ set_from_resource $c11 i3wm.color11 #f0f0f0
+ set_from_resource $c12 i3wm.color12 #f0f0f0
+ set_from_resource $c13 i3wm.color13 #f0f0f0
+ set_from_resource $c14 i3wm.color14 #f0f0f0
+ set_from_resource $c15 i3wm.color15 #f0f0f0
 
-# class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
+ # class                 border  backgr. text indicator child_border
+ client.focused          $c7     $c7     $c0  $c15       $c8
+ client.focused_inactive $c2     $c2     $c7  $c2       $c0
+ client.unfocused        $c2     $c2     $c7  $c2       $c0
+ client.urgent           $c4     $c4     $c0  $c2       $c0
+ client.placeholder      $c2     $c2     $c7  $c2       $c0
 
-client.background       $bg
-
+ client.background       $c0
