@@ -187,6 +187,9 @@ for_window [class="^.*"] border pixel 1
 
 # custom settings
 
+# binding lockscreen
+bindsym $mod+equal exec betterlockscreen -l
+
 # binding keys
 bindsym $mod+Shift+w exec pavucontrol
 # bindsym $mod+c exec /usr/bin/horimetro-dialog-create-task
@@ -214,15 +217,16 @@ bindsym $mod+Control+p exec light -A 5% # increase screen brightness
 bindsym $mod+Control+o exec light -U 5% # decrease screen brightness
 
 # start programs
+exec --no-startup-id xrandr --auto --dpi 100 --output eDP-1-1 --mode 1920x1080 --left-of HDMI-1-2
+exec --no-startup-id autorandr
 exec --no-startup-id feh --bg-fill ~/.config/wallpapers/current
 exec --no-startup-id wal -R
 # exec --no-startup-id xset -dpms s off
 exec_always --no-startup-id dunst -config ~/.config/dunst/config &
 # exec --no-startup-id mopidy &
-# exec --no-startup-id xrandr --output eDP-1-1 --auto --primary --output DP-1-1 --off --output HDMI-0 --auto --off
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id compton --backend glx --config ~/.config/compton.conf
 exec --no-startup-id kalu
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # i3 coloring
  set_from_resource $c0 i3wm.color0 #f0f0f0
