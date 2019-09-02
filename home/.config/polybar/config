@@ -258,11 +258,11 @@ type = internal/pulseaudio
 
 format-volume = <label-volume>
 label-volume = VOL %percentage%%
-#label-volume-foreground = ${root.foreground}
+use-ui-max = false
 
 #format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground}
-label-muted = sound muted
+label-muted = VOL mute
 
 [module/battery]
 type = internal/battery
