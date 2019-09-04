@@ -216,10 +216,21 @@ bindsym $mod+Shift+w exec pavucontrol
 # media
 bindsym $mod+KP_Add exec --no-startup-id amixer -D pulse sset Master 5%+
 bindsym $mod+KP_Subtract exec --no-startup-id amixer -D pulse sset Master 5%-
+
 bindsym $mod+Control+Down exec --no-startup-id playerctl play-pause
 bindsym $mod+Control+Right exec --no-startup-id playerctl next
 bindsym $mod+Control+Left exec --no-startup-id playerctl previous
 bindsym $mod+Control+Up exec --no-startup-id playerctl stop
+
+# XF86 keys
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
+
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioStop exec --no-startup-id playerctl stop
 
 bindsym --release Print exec scrot ~/Pictures/screenshots/%Y-%m-%d-%H-%M-%S.png
 bindsym --release Shift+Print exec scrot -s ~/Pictures/screenshots/%Y-%m-%d-%H-%M-%S.png
