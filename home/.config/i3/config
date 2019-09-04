@@ -137,7 +137,19 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# assign [class="Vivaldi"] $ws1
+# bind workspaces to monitors
+set $primary eDP-1-1
+set $secondary HDMI-1-2
+workspace $ws1 output $primary
+workspace $ws2 output $primary
+workspace $ws3 output $primary
+workspace $ws4 output $primary
+workspace $ws5 output $primary
+workspace $ws6 output $secondary
+workspace $ws7 output $secondary
+workspace $ws8 output $secondary
+workspace $ws9 output $secondary
+workspace $ws0 output $secondary
 
 # =========================== Keybinds =================================
 
