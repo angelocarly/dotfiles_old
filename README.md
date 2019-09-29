@@ -7,27 +7,28 @@
      \/__,_ / \/___/     \/__/   \/_/    \/_/   \/____/ \/____/ \/___/ 
                                                                    
 
-## Installation
-Stow each package you want to link.
-- `$ cd ~;`
-- `$ git clone`
+# Installation
+I manage my packages with [GNU Stow](https://www.gnu.org/software/stow/), it's available on most linux distributions.
+- `$ sudo pacman -S stow`
+
+To use it, navigate to your home directory and create symlinks using stow.
+- `$ cd ~`
+- `$ git clone https://github.com/angelocarly/dotfiles.git`
 - `$ cd dotfiles`
 - `$ stow {folder}`
 
-## Packages 
-These packages must be available on your system:
-* i3-gaps
-* polybar
-* compton
-* feh
-* imageMagick
-* light (screen brightness)
-* alsa
-* siji font
-* pywal
-* dunst (for notifications)
-* pulseaudio/pavucontrol
-* scrot
+**Note:** Stow only creates symlinks if the file doesn't already exist. You must remove/backup the existing config before using stow.
 
-## Optional
-* kalu
+## Packages 
+These dotfiles rely on the following packages:
+* i3-gaps - Window manager
+* polybar - Toolbar
+* siji font - Font used in polybar config
+* compton - Compositor
+* pywal - Generate global colors
+* feh - Image displayer for background
+* light - Screen brightness manager
+* dunst - Notification manager
+* pulseaudio/pavucontrol - Audio manager
+* scrot - Screenshot tool
+* kalu - Arch update notifier
