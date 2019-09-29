@@ -7,7 +7,7 @@
      \/__,_ / \/___/     \/__/   \/_/    \/_/  \/____/ \/____/ \/___/ 
                                                                    
 
-[screenshot](./.github/screenshot.png?raw=true)
+![screenshot](./.github/screenshot.png?raw=true)
 
 ## Installation
 I manage my packages with [GNU Stow](https://www.gnu.org/software/stow/), it's available on most linux distributions.
