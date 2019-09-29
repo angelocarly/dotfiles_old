@@ -21,7 +21,7 @@ To use it, navigate to your home directory and create symlinks using stow.
 
 ## Packages 
 These dotfiles rely on the following packages:
-* i3-gaps - Window manager
+* i3-gaps - Window manager, don't forget to add `exec i3` in xinitrc
 * polybar - Toolbar
 * siji font - Font used in polybar config
 * compton - Compositor
