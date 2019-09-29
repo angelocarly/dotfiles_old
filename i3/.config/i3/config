@@ -242,7 +242,7 @@ exec --no-startup-id wal -R
 # exec --no-startup-id xset -dpms s off
 exec_always --no-startup-id dunst -config ~/.config/dunst/config &
 # exec --no-startup-id mopidy &
-exec --no-startup-id compton --backend glx --config ~/.config/compton.conf
+exec --no-startup-id compton -b --backend glx --config ~/.config/compton/compton.conf
 exec --no-startup-id kalu
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
