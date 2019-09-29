@@ -1,3 +1,5 @@
+![screenshot](./.github/screenshot.png?raw=true)
+
       __              __         ___         ___                      
      /\ \            /\ \__    /'___\  __   /\_ \                     
      \_\ \     ___   \ \ ,_\  /\ \__/ /\_\  \//\ \       __     ____  
@@ -6,8 +8,6 @@
     \ \___,_\\ \____/   \ \__\  \ \_\   \ \_\  /\____\\ \____\\/\____/
      \/__,_ / \/___/     \/__/   \/_/    \/_/  \/____/ \/____/ \/___/ 
                                                                    
-
-[screenshot](./.github/screenshot.png?raw=true)
 
 ## Installation
 I manage my packages with [GNU Stow](https://www.gnu.org/software/stow/), it's available on most linux distributions.
