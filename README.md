@@ -8,11 +8,11 @@
                                                                    
 
 ## Installation
-Stow each directory you want to link.
-- '$ cd ~;
-- '$ git clone'
-- '$ cd dotfiles'
-- '$ stow {folder}'
+Stow each package you want to link.
+- `$ cd ~;`
+- `$ git clone`
+- `$ cd dotfiles`
+- `$ stow {folder}`
 
 ## Packages 
 These packages must be available on your system:
