@@ -1,0 +1,21 @@
+set $wallpaper /home/magnias/.config/wallpapers/current
+
+set $background #211f19
+set $foreground #c7c7c5
+
+set $color0 #211f19
+set $color1 #b1a277
+set $color2 #b4b27d
+set $color3 #a4b883
+set $color4 #a8bd8d
+set $color5 #90ba87
+set $color6 #bc8b9a
+set $color7 #c7c7c5
+set $color8 #585752
+set $color9 #b1a277
+set $color10 #b4b27d
+set $color11 #a4b883
+set $color12 #a8bd8d
+set $color13 #90ba87
+set $color14 #bc8b9a
+set $color15 #c7c7c5

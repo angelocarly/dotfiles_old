@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/magnias/.config/wallpapers/current"
+let background = "#211f19"
+let foreground = "#c7c7c5"
+let cursor     = "#c7c7c5"
+
+" Colors
+let color0  = "#211f19"
+let color1  = "#b1a277"
+let color2  = "#b4b27d"
+let color3  = "#a4b883"
+let color4  = "#a8bd8d"
+let color5  = "#90ba87"
+let color6  = "#bc8b9a"
+let color7  = "#c7c7c5"
+let color8  = "#585752"
+let color9  = "#b1a277"
+let color10 = "#b4b27d"
+let color11 = "#a4b883"
+let color12 = "#a8bd8d"
+let color13 = "#90ba87"
+let color14 = "#bc8b9a"
+let color15 = "#c7c7c5"

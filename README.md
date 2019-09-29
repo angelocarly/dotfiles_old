@@ -2,7 +2,7 @@
 Linux i3 environment
 
 ## Installation
-Create symbolic links by running link.sh
+Stow each directory you want to link.
 
 ## Requirements
 These packages must be available on your system:
