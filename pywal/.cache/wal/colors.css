@@ -4,25 +4,25 @@
     --wallpaper: url("None");
 
     /* Special */
-    --background: #000000;
-    --foreground: #c1c1c1;
-    --cursor: #c1c1c1;
+    --background: #2b2b2b;
+    --foreground: #e6e1dc;
+    --cursor: #e6e1dc;
 
     /* Colors */
-    --color0: #000000;
-    --color1: #5f8787;
-    --color2: #dd9999;
-    --color3: #a06666;
-    --color4: #888888;
-    --color5: #999999;
-    --color6: #aaaaaa;
-    --color7: #c1c1c1;
-    --color8: #333333;
-    --color9: #5f8787;
-    --color10: #dd9999;
-    --color11: #a06666;
-    --color12: #888888;
-    --color13: #999999;
-    --color14: #aaaaaa;
-    --color15: #c1c1c1;
+    --color0: #2b2b2b;
+    --color1: #da4939;
+    --color2: #a5c261;
+    --color3: #ffc66d;
+    --color4: #6d9cbe;
+    --color5: #b6b3eb;
+    --color6: #519f50;
+    --color7: #e6e1dc;
+    --color8: #5a647e;
+    --color9: #da4939;
+    --color10: #a5c261;
+    --color11: #ffc66d;
+    --color12: #6d9cbe;
+    --color13: #b6b3eb;
+    --color14: #519f50;
+    --color15: #f9f7f3;
 }

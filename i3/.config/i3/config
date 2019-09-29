@@ -247,28 +247,28 @@ exec --no-startup-id kalu
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # i3 coloring
- set_from_resource $c0 i3wm.color0 #f0f0f0
- set_from_resource $c1 i3wm.color1 #f0f0f0
- set_from_resource $c2 i3wm.color2 #f0f0f0
- set_from_resource $c3 i3wm.color3 #f0f0f0
- set_from_resource $c4 i3wm.color4 #f0f0f0
- set_from_resource $c5 i3wm.color5 #f0f0f0
- set_from_resource $c6 i3wm.color6 #f0f0f0
- set_from_resource $c7 i3wm.color7 #f0f0f0
- set_from_resource $c8 i3wm.color8 #f0f0f0
- set_from_resource $c9 i3wm.color9 #f0f0f0
- set_from_resource $c10 i3wm.color10 #f0f0f0
- set_from_resource $c11 i3wm.color11 #f0f0f0
- set_from_resource $c12 i3wm.color12 #f0f0f0
- set_from_resource $c13 i3wm.color13 #f0f0f0
- set_from_resource $c14 i3wm.color14 #f0f0f0
- set_from_resource $c15 i3wm.color15 #f0f0f0
+set_from_resource $c0 i3wm.color0 #f0f0f0
+set_from_resource $c1 i3wm.color1 #f0f0f0
+set_from_resource $c2 i3wm.color2 #f0f0f0
+set_from_resource $c3 i3wm.color3 #f0f0f0
+set_from_resource $c4 i3wm.color4 #f0f0f0
+set_from_resource $c5 i3wm.color5 #f0f0f0
+set_from_resource $c6 i3wm.color6 #f0f0f0
+set_from_resource $c7 i3wm.color7 #f0f0f0
+set_from_resource $c8 i3wm.color8 #f0f0f0
+set_from_resource $c9 i3wm.color9 #f0f0f0
+set_from_resource $c10 i3wm.color10 #f0f0f0
+set_from_resource $c11 i3wm.color11 #f0f0f0
+set_from_resource $c12 i3wm.color12 #f0f0f0
+set_from_resource $c13 i3wm.color13 #f0f0f0
+set_from_resource $c14 i3wm.color14 #f0f0f0
+set_from_resource $c15 i3wm.color15 #f0f0f0
 
- # class                 border  backgr. text indicator child_border
- client.focused          $c2     $c7     $c0  $c15       $c8
- client.focused_inactive $c2     $c2     $c7  $c2       $c0
- client.unfocused        $c2     $c2     $c7  $c2       $c0
- client.urgent           $c4     $c4     $c0  $c2       $c0
- client.placeholder      $c2     $c2     $c7  $c2       $c0
+# class                 border  backgr. text indicator child_border
+client.focused          $c2     $c7     $c0  $c15       $c8
+client.focused_inactive $c2     $c2     $c7  $c2       $c0
+client.unfocused        $c2     $c2     $c7  $c2       $c0
+client.urgent           $c4     $c4     $c0  $c2       $c0
+client.placeholder      $c2     $c2     $c7  $c2       $c0
 
- client.background       $c0
+client.background       $c0
