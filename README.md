@@ -7,7 +7,9 @@
      \/__,_ / \/___/     \/__/   \/_/    \/_/  \/____/ \/____/ \/___/ 
                                                                    
 
-# Installation
+[screenshot](./.github/screenshot.png?raw=true)
+
+## Installation
 I manage my packages with [GNU Stow](https://www.gnu.org/software/stow/), it's available on most linux distributions.
 - `$ sudo pacman -S stow`
 
@@ -19,8 +21,8 @@ To use it, navigate to your home directory and create symlinks using stow.
 
 **Note:** Stow only creates symlinks if the file doesn't already exist. You must remove/backup the existing config before using stow.
 
-## Packages 
-These dotfiles rely on the following packages:
+## Overview
+* zsh - Highly customizable shell
 * i3-gaps - Window manager, don't forget to add `exec i3` in xinitrc
 * polybar - Toolbar
 * siji font - Font used in polybar config
