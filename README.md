@@ -26,6 +26,7 @@ To use it, navigate to your home directory and create symlinks using stow.
 * i3-gaps - Window manager, don't forget to add `exec i3` in xinitrc
 * polybar - Toolbar
 * siji font - Font used in polybar config
+* Tamzen - Font used for polybar text
 * compton - Compositor
 * pywal - Generate global colors
 * feh - Image displayer for background
@@ -34,3 +35,5 @@ To use it, navigate to your home directory and create symlinks using stow.
 * pulseaudio/pavucontrol - Audio manager
 * scrot - Screenshot tool
 * kalu - Arch update notifier
+* kitty - Terminal
+* Terminus (TTF) - Font for kitty
