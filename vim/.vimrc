@@ -1,4 +1,4 @@
-inoremap jk <Esc>
+inoremap jl <Esc>
 
 call plug#begin('~/.vim/plugged')
 
