@@ -19,6 +19,11 @@ To use it, navigate to your home directory and create symlinks using stow.
 - `$ cd dotfiles`
 - `$ stow {folder}`
 
+If you wish to link all the folders, do the following:
+- `$ rm README.md`
+- `$ stow *`
+- `$ git pull`
+
 **Note:** Stow only creates symlinks if the file doesn't already exist. You must remove/backup the existing config before using stow.
 
 ## Overview
