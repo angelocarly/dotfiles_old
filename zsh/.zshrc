@@ -3,27 +3,26 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/magnias/.oh-my-zsh"
-# Path to python vars
 export PYTHONPATH=$PYTHONPATH:/home/magnias/.config/dev/python/python-files
+
+# Aliases
+alias icat="kitty +kitten icat"
+
+wttr()
+{
+	curl https://wttr.in/ghent
+}
+
+cheat()
+{
+	curl -s "cheat.sh/$1"
+}
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="blinks-mag"
-
-# Alias
-alias icat="kitty +kitten icat"
-alias rwal="wal -b 1a1a1a -i ~/.config/wallpapers/current"
-alias cwal="wal -b 1a1a1a --theme random_dark"
-
-cheat() {
-  curl -s "cheat.sh/$1"
-}
-
-wttr() {
-  curl https://wttr.in/ghent
-}
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -83,7 +82,7 @@ wttr() {
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -112,8 +111,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
