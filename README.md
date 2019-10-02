@@ -28,14 +28,17 @@ To use it, navigate to your home directory and create symlinks using stow.
 * [compton](https://github.com/chjj/compton) - *Compositor*
 * [rofi](https://github.com/davatorium/rofi) - *Application launcher*
 * [polybar](https://github.com/polybar/polybar) - *Toolbar*
+
 **Colors and fonts**
 * [pywal](https://github.com/dylanaraps/pywal) - *Dynamic color scheme generator*
 * [siji](https://github.com/stark/siji) - *Polybar status icons font*
 * [Tamzen](https://github.com/sunaku/tamzen-font) - *Polybar text font*
 * [Terminus (TTF)](http://terminus-font.sourceforge.net) - *Terminal font*
+
 **Shell**
 * [zsh](https://www.zsh.org) - *Shell*
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) - *Awesome zsh extensions*
+
 **Tools**
 * [feh](https://github.com/derf/feh) - *Image displayer for background*
 * [light](https://github.com/haikarainen/light) - *Screen brightness manager*
