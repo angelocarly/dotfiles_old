@@ -37,7 +37,7 @@ If you wish to link all the folders, do the following:
 **Colors and fonts**
 * [pywal](https://github.com/dylanaraps/pywal) - *Dynamic color scheme generator*
 * [siji](https://github.com/stark/siji) - *Polybar status icons font*
-* [Tamzen](https://github.com/sunaku/tamzen-font) - *Polybar text font*
+* [tamzen](https://github.com/sunaku/tamzen-font) - *Polybar text font*
 * [Terminus (TTF)](http://terminus-font.sourceforge.net) - *Terminal font*
 
 **Shell**
