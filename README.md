@@ -42,7 +42,7 @@ If you wish to link all the folders, do the following:
 
 **Shell**
 * [zsh](https://www.zsh.org) - *Shell*
-* [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) - *Awesome zsh extensions*
+* [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) - *zsh extensions*
 
 **Tools**
 * [feh](https://github.com/derf/feh) - *Image displayer for background*
