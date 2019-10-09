@@ -56,10 +56,10 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Siji:pixelsize=10;1"
 font-3 = "DejaVuSansMono Nerd Font:pixelsize=10;2"
 
-modules-left = i3
+modules-left = i3 
 #modules-center = xwindow
-modules-center = date
-modules-right = pulseaudio memory cpu wlan eth battery temperature
+modules-center = spotify 
+modules-right = pulseaudio memory cpu wlan eth battery temperature date
 
 separator = |
 
@@ -103,6 +103,14 @@ label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 # label-indicator-underline = ${colors.secondary}
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python $HOME/.config/polybar/spotify.py -f '{artist} - {song}'
+# format-underline = #1db954
 
 [module/filesystem]
 type = internal/fs

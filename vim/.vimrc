@@ -1,4 +1,4 @@
-inoremap jl <Esc>
+inoremap kj <Esc>
 
 call plug#begin('~/.vim/plugged')
 
@@ -43,3 +43,11 @@ call plug#end()
 "let g:instant_markdown_port = 8888
 "let g:instant_markdown_python = 1
 
+set number
+set relativenumber
+set hlsearch
+set scrolloff=5
+set t_Co=256
+set tabstop=4
+
+syntax on

@@ -216,8 +216,10 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86AudioStop exec --no-startup-id playerctl stop
 
-bindsym --release Print exec scrot ~/Pictures/screenshots/%Y-%m-%d-%H-%M-%S.png
-bindsym --release Shift+Print exec scrot -s ~/Pictures/screenshots/%Y-%m-%d-%H-%M-%S.png
+# bindsym --release Print exec scrot ~/Pictures/screenshots/%Y-%m-%d-%H-%M-%S.png
+# bindsym --release Shift+Print exec scrot -s ~/Pictures/screenshots/%Y-%m-%d-%H-%M-%S.png
+bindsym --release Print exec maim -st 9999999 | xclip -selection clipboard -t image/png 
+bindsym --release Shift+Print exec maim -s | xclip -selection clipboard -t image/png 
 
 # Brightness
 bindsym $mod+Control+p exec light -A 5% # increase screen brightness
