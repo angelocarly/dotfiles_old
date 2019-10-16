@@ -196,7 +196,7 @@ ramp-signal-0 = 
 ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]

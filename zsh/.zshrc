@@ -2,20 +2,22 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+export EDITOR="nvim"
 export ZSH="/home/magnias/.oh-my-zsh"
 export PYTHONPATH=$PYTHONPATH:/home/magnias/.config/dev/python/python-files
+export BP="Documents/Bachelorproef-HoGent/bachproef"
 
 # Aliases
 alias icat="kitty +kitten icat"
-
-wttr()
-{
-	curl https://wttr.in/ghent
-}
+alias sht="sudo shutdown now"
+alias pls="sudo !!"
+alias wttr="curl https://wttr.in/ghent"
+alias vim="nvim"
+alias svim="sudoedit"
 
 cheat()
 {
-	curl -s "cheat.sh/$1"
+		curl -s "cheat.sh/$1";
 }
 
 # Set name of the theme to load --- if set to "random", it will
@@ -111,3 +113,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+

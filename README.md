@@ -19,10 +19,7 @@ To use it, navigate to your home directory and create symlinks using stow.
 - `$ cd dotfiles`
 - `$ stow {folder}`
 
-If you wish to link all the folders, do the following:
-- `$ rm README.md`
-- `$ stow *`
-- `$ git pull`
+If you wish to link all the folders, run `install.sh`
 
 **Note:** Stow only creates symlinks if the file doesn't already exist. You must remove/backup the existing config before using stow.
 
@@ -51,3 +48,8 @@ If you wish to link all the folders, do the following:
 * [pulseaudio](https://github.com/pulseaudio/pulseaudio) - *Audio manager*
 * [scrot](https://github.com/dreamer/scrot) - *Screenshot tool*
 * [kalu](https://github.com/jjk-jacky/kalu) - *Arch update notifier*
+
+**Applications**
+* [ranger](https://github.com/ranger/ranger) - *File browser*
+* [qutebrowser](https://github.com/qutebrowser/qutebrowser) - *Browser*
+* [neovim](https://github.com/neovim/neovim) - *Text editor*
