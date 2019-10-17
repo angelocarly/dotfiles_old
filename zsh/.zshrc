@@ -119,22 +119,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 bindkey -M viins 'kj' vi-cmd-mode
-export KEYTIMEOUT=1
+export KEYTIMEOUT=10
 
-# Modal cursor color for vi's insert/normal modes.
-# http://stackoverflow.com/questions/30985436/
-# https://bbs.archlinux.org/viewtopic.php?id=95078
-# http://unix.stackexchange.com/questions/115009/
-zle-line-init () {
-  zle -K viins
-  #echo -ne "\033]12;Grey\007"
-  #echo -n 'grayline1'
-  echo -ne "\033]12;Gray\007"
-  echo -ne "\033[4 q"
-  #print 'did init' >/dev/pts/16
-}
-zle -N zle-line-init
-zle-keymap-select () {
+function zle-line-init zle-keymap-select () {
 		if [ $KEYMAP = vicmd ]; then
 			# the command mode for vi
 			echo -ne "\e[2 q"
@@ -143,4 +130,5 @@ zle-keymap-select () {
 			echo -ne "\e[4 q"
 		fi
 }
+zle -N zle-line-init
 zle -N zle-keymap-select
