@@ -5,7 +5,7 @@
 export EDITOR="nvim"
 export ZSH="/home/magnias/.oh-my-zsh"
 export PYTHONPATH=$PYTHONPATH:/home/magnias/.config/dev/python/python-files
-export BP="Documents/Bachelorproef-HoGent/bachproef"
+export BP="/home/magnias/Documents/Bachelorproef-HoGent/bachproef"
 
 # Aliases
 alias icat="kitty +kitten icat"
@@ -18,6 +18,10 @@ alias svim="sudoedit"
 cheat()
 {
 		curl -s "cheat.sh/$1";
+}
+mcd()
+{ 
+		mkdir "$1" && cd "$1" ; 
 }
 
 # Set name of the theme to load --- if set to "random", it will
@@ -84,7 +88,7 @@ ZSH_THEME="blinks-mag"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -114,3 +118,29 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+bindkey -M viins 'kj' vi-cmd-mode
+export KEYTIMEOUT=1
+
+# Modal cursor color for vi's insert/normal modes.
+# http://stackoverflow.com/questions/30985436/
+# https://bbs.archlinux.org/viewtopic.php?id=95078
+# http://unix.stackexchange.com/questions/115009/
+zle-line-init () {
+  zle -K viins
+  #echo -ne "\033]12;Grey\007"
+  #echo -n 'grayline1'
+  echo -ne "\033]12;Gray\007"
+  echo -ne "\033[4 q"
+  #print 'did init' >/dev/pts/16
+}
+zle -N zle-line-init
+zle-keymap-select () {
+		if [ $KEYMAP = vicmd ]; then
+			# the command mode for vi
+			echo -ne "\e[2 q"
+		else
+			# the insert mode for vi
+			echo -ne "\e[4 q"
+		fi
+}
+zle -N zle-keymap-select

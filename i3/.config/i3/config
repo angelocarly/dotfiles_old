@@ -173,7 +173,7 @@ bindsym $mod+r mode "resize"
 # i3gaps settings
 
 # gaps configurations
-gaps inner 5
+gaps inner 5 
 gaps outer 0
 smart_gaps on
 
