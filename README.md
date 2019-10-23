@@ -53,3 +53,4 @@ If you wish to link all the folders, run `install.sh`
 * [ranger](https://github.com/ranger/ranger) - *File browser*
 * [qutebrowser](https://github.com/qutebrowser/qutebrowser) - *Browser*
 * [neovim](https://github.com/neovim/neovim) - *Text editor*
+* [ncdu](https://dev.yorhel.nl/ncdu) - *Disk usage analyser*

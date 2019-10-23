@@ -14,6 +14,7 @@ alias pls="sudo !!"
 alias wttr="curl https://wttr.in/ghent"
 alias vim="nvim"
 alias svim="sudoedit"
+alias p="python"
 
 cheat()
 {
