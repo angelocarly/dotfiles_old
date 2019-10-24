@@ -85,7 +85,7 @@
 
 #element.normal.active {
     background-color: @active-background;
-    text-color: @background;
+    text-color: @active-foreground;
 }
 
 #element.selected.normal {
