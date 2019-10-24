@@ -9,7 +9,7 @@ export BP="/home/magnias/Documents/Bachelorproef-HoGent/bachproef"
 
 # Aliases
 alias icat="kitty +kitten icat"
-alias sht="sudo shutdown now"
+alias sht="sudo -k shutdown now"
 alias pls="sudo !!"
 alias wttr="curl https://wttr.in/ghent"
 alias vim="nvim"

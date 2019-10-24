@@ -21,8 +21,8 @@
     selected-urgent-foreground: @foreground;
 
     background-color: @background;
-    background: #dab997;
-    foreground: #262626;
+    background: #262626;
+    foreground: #dab997;
     border-color: @background;
     spacing: 2;
 }
@@ -85,12 +85,12 @@
 
 #element.normal.active {
     background-color: @active-background;
-    text-color: @active-foreground;
+    text-color: @foreground;
 }
 
 #element.selected.normal {
     background-color: @selected-normal-background;
-    text-color: @selected-normal-foreground;
+    text-color: @background;
 }
 
 #element.selected.urgent {
