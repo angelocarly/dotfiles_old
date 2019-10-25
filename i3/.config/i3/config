@@ -227,9 +227,9 @@ bindsym $mod+Control+o exec light -U 5% # decrease screen brightness
 
 # start programs
 exec --no-startup-id xrandr --auto --dpi 100 --output eDP-1-1 --mode 1920x1080 --left-of HDMI-1-2
-exec --no-startup-id autorandr
-exec --no-startup-id feh --bg-fill ~/.config/wallpapers/current
+exec --no-startup-id autorandr --change
 exec --no-startup-id wal -R
+exec --no-startup-id feh --bg-fil ~/.config/wallpapers/current
 # exec --no-startup-id xset -dpms s off
 exec_always --no-startup-id dunst -config ~/.config/dunst/config &
 # exec --no-startup-id mopidy &

@@ -46,7 +46,7 @@ If you wish to link all the folders, run `install.sh`
 * [light](https://github.com/haikarainen/light) - *Screen brightness manager*
 * [dunst](https://github.com/dunst-project/dunst) - *Notification manager*
 * [pulseaudio](https://github.com/pulseaudio/pulseaudio) - *Audio manager*
-* [scrot](https://github.com/dreamer/scrot) - *Screenshot tool*
+* [maim](https://github.com/naelstrof/maim) - *Screenshot tool*
 * [kalu](https://github.com/jjk-jacky/kalu) - *Arch update notifier*
 
 **Applications**
