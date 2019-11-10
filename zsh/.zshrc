@@ -8,15 +8,19 @@ export PYTHONPATH=$PYTHONPATH:/home/magnias/.config/dev/python/python-files
 export BP="/home/magnias/Documents/Bachelorproef-HoGent/bachproef"
 
 # Aliases
-alias icat="kitty +kitten icat"
 alias sht="sudo -k shutdown now"
 alias pls="sudo !!"
 alias wttr="curl https://wttr.in/ghent"
 alias vim="nvim"
 alias svim="sudoedit"
 alias p="python"
+alias sshmag="kitty +kitten ssh pi@server.magnias.be -p 2202"
+alias ssh="kitty +kitten ssh"
+alias panel="kitty +kitten panel"
+alias icat="kitty +kitten icat"
 
 cheat()
+
 {
 		curl -s "cheat.sh/$1";
 }
@@ -89,7 +93,7 @@ ZSH_THEME="blinks-mag"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode)
+plugins=(git vi-mode colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -133,3 +137,5 @@ function zle-line-init zle-keymap-select () {
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
+
+eval $(thefuck --alias)
