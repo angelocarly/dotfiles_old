@@ -1,5 +1,6 @@
 ![screenshot](./.github/screenshot.png?raw=true)
 ![screenshot2](./.github/screenshot2.png?raw=true)
+![screenshot2](./.github/wallpaper.png?raw=true)
 
       __              __         ___         ___                      
      /\ \            /\ \__    /'___\  __   /\_ \                     
