@@ -8,7 +8,7 @@ export PYTHONPATH=$PYTHONPATH:/home/magnias/.config/dev/python/python-files
 export BP="/home/magnias/Documents/Bachelorproef-HoGent/bachproef"
 
 # Aliases
-alias sht="sudo -k shutdown now"
+alias sht="sudo -k shutdown -h now"
 alias pls="sudo !!"
 alias wttr="curl https://wttr.in/ghent"
 alias vim="nvim"
