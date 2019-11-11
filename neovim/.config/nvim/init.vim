@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='base16_adwaita'
+let g:airline_theme='atomic'
 
 Plug 'tpope/vim-surround'
 
