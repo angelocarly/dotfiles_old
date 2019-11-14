@@ -17,7 +17,7 @@
 ;==========================================================
 
 [colors]
-background = ${xrdb:color0:#222}
+background = ${xrdb:color16:#222}
 ;background = #222
 background-alt = ${xrdb:color1:#444}
 foreground = ${xrdb:color7:#222}
@@ -27,6 +27,23 @@ primary = ${xrdb:color5:#222}
 ;primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+c0 = ${xrdb:color0}
+c1 = ${xrdb:color1}
+c2 = ${xrdb:color2}
+c3 = ${xrdb:color3}
+c4 = ${xrdb:color4}
+c5 = ${xrdb:color5}
+c6 = ${xrdb:color6}
+c7 = ${xrdb:color7}
+c8 = ${xrdb:color8}
+c9 = ${xrdb:color9}
+c10 = ${xrdb:color10}
+c11 = ${xrdb:color11}
+c12 = ${xrdb:color12}
+c13 = ${xrdb:color13}
+c14 = ${xrdb:color14}
+c15 = ${xrdb:color15}
+c16 = ${xrdb:color16}
 
 [bar/magnias]
 monitor = ${env:MONITOR:eDP-1-1}
@@ -138,7 +155,7 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.background}
-label-focused-underline= ${colors.foreground-alt}
+label-focused-underline= ${colors.c4}
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
@@ -256,7 +273,7 @@ format-charging = <animation-charging> <label-charging>
 format-discharging = <animation-discharging> <label-discharging>
 # format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = "  "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground}
 # format-full-underline = ${self.format-charging-underline}
 

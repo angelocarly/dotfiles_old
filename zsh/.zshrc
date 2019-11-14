@@ -123,19 +123,3 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-bindkey -M viins 'kj' vi-cmd-mode
-export KEYTIMEOUT=10
-
-function zle-line-init zle-keymap-select () {
-		if [ $KEYMAP = vicmd ]; then
-			# the command mode for vi
-			echo -ne "\e[2 q"
-		else
-			# the insert mode for vi
-			echo -ne "\e[4 q"
-		fi
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
-
-eval $(thefuck --alias)
