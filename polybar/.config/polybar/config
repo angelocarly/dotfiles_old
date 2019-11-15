@@ -214,7 +214,7 @@ type = internal/cpu
 interval = 2
 format-prefix-foreground = ${colors.foreground}
 format-prefix = "CPU "
-label = "%percentage%%"
+label = "%percentage:2%%"
 label-foreground = ${colors.foreground-alt}
 
 [module/memory]
@@ -222,7 +222,7 @@ type = internal/memory
 interval = 2
 format-prefix-foreground = ${colors.foreground}
 format-prefix = "RAM " 
-label = "%percentage_used%%"
+label = "%percentage_used:2%%"
 label-foreground = ${colors.foreground-alt}
 
 [module/wlan]
@@ -286,7 +286,7 @@ type = internal/pulseaudio
 format-volume = VOL <label-volume>
 format-volume-foreground = ${colors.foreground}
 label-volume-foreground = ${colors.foreground-alt}
-label-volume = %percentage:2%%
+label-volume = %percentage%%
 use-ui-max = false
 
 #format-muted-prefix = " "
