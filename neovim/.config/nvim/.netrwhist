@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/magnias/.config/bspwm'
+let g:netrw_dirhist_6='/home/magnias/.config/sxhkd'
 let g:netrw_dirhist_5='/home/magnias/.config/feh'
 let g:netrw_dirhist_4='/home/magnias/.config/nvim'
 let g:netrw_dirhist_3='/home/magnias/dotfiles/i3/.config/i3'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_1='/home/magnias/.config/kitty'
 let g:netrw_dirhist_0='/home/magnias/dotfiles/pywal/.config/wal/templates'
 let g:netrw_dirhist_9='/etc/sensors.d'
 let g:netrw_dirhist_8='/home/magnias/dotfiles/oh-my-zsh/.oh-my-zsh/custom/themes'
-let g:netrw_dirhist_7='/home/magnias/dotfiles/oh-my-zsh/.oh-my-zsh/custom'
-let g:netrw_dirhist_6='/home/magnias/dotfiles/oh-my-zsh/.oh-my-zsh'

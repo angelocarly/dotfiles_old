@@ -17,16 +17,6 @@
 ;==========================================================
 
 [colors]
-background = ${xrdb:color16:#222}
-;background = #222
-background-alt = ${xrdb:color1:#444}
-foreground = ${xrdb:color7:#222}
-;foreground = #dfdfdf
-foreground-alt = ${xrdb:color3:#555}
-primary = ${xrdb:color5:#222}
-;primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
 c0 = ${xrdb:color0}
 c1 = ${xrdb:color1}
 c2 = ${xrdb:color2}
@@ -44,6 +34,14 @@ c13 = ${xrdb:color13}
 c14 = ${xrdb:color14}
 c15 = ${xrdb:color15}
 c16 = ${xrdb:color16}
+background = ${xrdb:color16:#222}
+background-alt = ${xrdb:color1:#444}
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color6:#555}
+primary = ${xrdb:color5:#222}
+;primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
 
 [bar/magnias]
 monitor = ${env:MONITOR:eDP-1-1}
@@ -73,10 +71,11 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Siji:pixelsize=10;1"
 font-3 = "DejaVuSansMono Nerd Font:pixelsize=10;2"
 
-modules-left = i3 
+modules-left = i3 bspwm cpu memory pulseaudio
 #modules-center = xwindow
 modules-center = spotify 
-modules-right = pulseaudio memory cpu wlan eth battery temperature date
+#modules-right = pulseaudio memory cpu wlan eth battery temperature date
+modules-right = wlan eth0 date battery temperature
 
 separator = |
 
@@ -84,7 +83,7 @@ tray-position = right
 tray-padding = 0
 ;tray-background = #0063ff
 
-;wm-restack = bspwm
+wm-restack = bspwm
 ;wm-restack = i3
 
 ;override-redirect = true
@@ -97,6 +96,7 @@ tray-padding = 0
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
 
 # =========================== Modules ==================================
 
@@ -155,7 +155,7 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.background}
-label-focused-underline= ${colors.c4}
+label-focused-underline= ${colors.c7}
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
@@ -181,25 +181,56 @@ label-urgent-padding = 1
 #type = internal/backlight
 #card = intel_backlight
 
+[module/bspwm]
+type = internal/bspwm
+; Only show workspaces defined on the same output as the bar
+pin-workspaces = true
+inline-mode = true
+enable-click = false
+enable-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+
+label-focused = %index%
+#label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.foreground-alt}
+label-focused-padding = 1
+
+label-occupied = %index%
+label-occupied-padding = 1
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %index%
+label-empty-foreground = #555
+label-empty-padding = 1
+
+label-monitor = %name%
+
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix-foreground = ${colors.foreground-alt}
-# format-underline = #f90000
-label = CPU %percentage:2%%
+format-prefix-foreground = ${colors.foreground}
+format-prefix = "CPU "
+label = "%percentage%%"
+label-foreground = ${colors.foreground-alt}
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix-foreground = ${colors.foreground-alt}
-label = RAM %percentage_used%%
+format-prefix-foreground = ${colors.foreground}
+format-prefix = "RAM " 
+label = "%percentage_used%%"
+label-foreground = ${colors.foreground-alt}
 
 [module/wlan]
 type = internal/network
 interface = wlo1
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected> 
+format-connected = <ramp-signal> <label-connected>
 # format-connected-underline = #9f78e1
 label-connected = %essid% [%local_ip%]
 
@@ -237,22 +268,25 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt = "%Y-%m-%d "
 
-time = %H:%M
+time = %a %I:%M %p
 time-alt = %H:%M:%S
 
-format-prefix = 
-format-prefix-foreground = ${colors.foreground}
+format-prefix = 
+#format-prefix = 
+#format-prefix-foreground = ${colors.foreground}
 # format-underline = #0a6cf5
 
-label = %date% %time%
+label = %date%%time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume>
-label-volume = VOL %percentage%%
+format-volume = VOL <label-volume>
+format-volume-foreground = ${colors.foreground}
+label-volume-foreground = ${colors.foreground-alt}
+label-volume = %percentage:2%%
 use-ui-max = false
 
 #format-muted-prefix = " "
@@ -267,7 +301,10 @@ battery = BAT1
 adapter = ADP1
 full-at = 97
 
-format-charging = <animation-charging> <label-charging>
+#format-charging = <animation-charging> <label-charging>
+label-charging-foreground = ${colors.foreground-alt}
+format-charging = BAT <label-charging>
+format-charging-foreground = ${colors.foreground}
 # format-charging-underline = #ffb52a
 
 format-discharging = <animation-discharging> <label-discharging>
