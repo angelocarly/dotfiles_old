@@ -130,6 +130,13 @@ super + Print
 	maim -s | xclip -sel c -t image/png
 
 #
+# Screen brightness
+#
+
+super + ctrl + {p,o}
+	light -{A,U} 5%
+
+#
 # Audio and playback
 #
 
