@@ -1,0 +1,14 @@
+[Unit]
+Description=Battery Monitor
+
+[Service]
+Type=simple
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=%h/.Xauthority
+ExecStart=/bin/bash %h/dotfiles/.scripts/bat.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
+ 
