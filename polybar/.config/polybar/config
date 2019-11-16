@@ -299,7 +299,7 @@ type = internal/battery
 ; $ ls -1 /sys/class/power_supply/
 battery = BAT1
 adapter = ADP1
-full-at = 97
+full-at = 95
 
 #format-charging = <animation-charging> <label-charging>
 label-charging-foreground = ${colors.foreground-alt}
@@ -310,8 +310,9 @@ label-discharging-foreground = ${colors.foreground-alt}
 format-discharging = BAT <label-discharging>
 format-discharging-foreground = ${colors.foreground}
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground}
+label-full-foreground = ${colors.foreground-alt}
+format-full = BAT <label-full>
+format-full-foreground = ${colors.foreground}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
