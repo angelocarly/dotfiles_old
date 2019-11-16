@@ -186,7 +186,7 @@ type = internal/bspwm
 ; Only show workspaces defined on the same output as the bar
 pin-workspaces = true
 inline-mode = true
-enable-click = false
+enable-click = true
 enable-scroll = false
 reverse-scroll = false
 fuzzy-match = true
@@ -305,14 +305,13 @@ full-at = 97
 label-charging-foreground = ${colors.foreground-alt}
 format-charging = BAT <label-charging>
 format-charging-foreground = ${colors.foreground}
-# format-charging-underline = #ffb52a
 
-format-discharging = <animation-discharging> <label-discharging>
-# format-discharging-underline = ${self.format-charging-underline}
+label-discharging-foreground = ${colors.foreground-alt}
+format-discharging = BAT <label-discharging>
+format-discharging-foreground = ${colors.foreground}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground}
-# format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
