@@ -17,6 +17,10 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
+# Use the default cursor
+xsetroot -cursor_name left_ptr &
+
+# Run applications
 dunst &
 autorandr -c &
 feh --bg-fill ~/.config/wallpapers/current &
