@@ -75,7 +75,7 @@ modules-left = i3 bspwm cpu memory pulseaudio
 #modules-center = xwindow
 modules-center = spotify 
 #modules-right = pulseaudio memory cpu wlan eth battery temperature date
-modules-right = wlan eth0 date battery temperature
+modules-right = wlan eth0 temperature battery date
 
 separator = |
 
@@ -337,6 +337,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <label>
+format-foreground = ${colors.foreground}
 #format = <ramp> <label>
 # format-underline = #f50a4d
 format-warn = <label-warn> 

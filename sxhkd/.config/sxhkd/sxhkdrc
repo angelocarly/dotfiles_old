@@ -133,7 +133,7 @@ super + equal
 
 Print 
 	maim | xclip -sel c -t image/png
-super + Print
+shift + Print
 	maim -s | xclip -sel c -t image/png
 
 #

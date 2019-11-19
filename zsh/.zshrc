@@ -18,6 +18,7 @@ alias sshmag="kitty +kitten ssh pi@server.magnias.be -p 2202"
 alias ssh="kitty +kitten ssh"
 alias panel="kitty +kitten panel"
 alias icat="kitty +kitten icat"
+alias isw="sudo isw"
 
 cheat()
 
@@ -93,7 +94,7 @@ ZSH_THEME="blinks-mag"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode colored-man-pages)
+plugins=(git colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
