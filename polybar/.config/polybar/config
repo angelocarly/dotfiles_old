@@ -302,7 +302,9 @@ use-ui-max = false
 
 #format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground}
-label-muted = VOL mute
+label-muted-foreground = ${colors.foreground-alt}
+format-muted = VOL <label-muted>
+label-muted = mute
 
 [module/battery]
 type = internal/battery

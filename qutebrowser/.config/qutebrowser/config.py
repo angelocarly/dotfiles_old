@@ -1874,3 +1874,7 @@ c.fonts.monospace = 'Tamzen, "xos4 Terminus", Terminus, Monospace, "DejaVu Sans 
 # config.bind('n', 'prompt-accept no', mode='yesno')
 # config.bind('y', 'prompt-accept yes', mode='yesno')
 config.source('qutewal.py')
+
+import sys, os
+sys.path.append(os.path.join(sys.path[0], 'jmatrix'))
+config.source("jmatrix/jmatrix/integrations/qutebrowser.py")

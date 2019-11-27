@@ -1,0 +1,78 @@
+# WARNING: This file can be overwritten easily with the :jmatrix-write-rules command
+# When data is overwritten, formatting and comments will be lost.
+# Please exercise caution when editing this file directly, and make sure to keep backups.
+
+
+https-strict: behind-the-scene false
+matrix-off: behind-the-scene true
+matrix-off: about-scheme true
+matrix-off: chrome-extension-scheme true
+matrix-off: chrome-scheme true
+matrix-off: moz-extension-scheme true
+matrix-off: opera-scheme true
+matrix-off: vivaldi-scheme true
+matrix-off: wyciwyg-scheme true
+matrix-off: qute-scheme true
+* * * block
+* * css allow
+* * frame block
+* * image allow
+* 1st-party * allow
+* 1st-party frame allow
+
+# Youtube
+accounts.google.com ssl.gstatic.com xhr allow
+youtube.com googlevideo.com xhr allow
+youtube.com googlevideo.com media allow
+youtube.com s.ytimg.com script allow
+youtube.com www.gstatic.com script allow
+youtube.com ytimg.com image allow
+
+# Github
+twitch.tv google.com image allow
+twitch.tv google.com script allow
+twitch.tv google.com xhr allow
+twitch.tv gstatic.com script allow
+twitch.tv passport-cdn.ttvnw.net script allow
+twitch.tv 0914.global.ssl.fastly.net script allow
+twitch.tv 0914.global.ssl.fastly.net xhr allow
+twitch.tv algolia.net script allow
+twitch.tv algolia.net xhr allow
+twitch.tv algolianet.com script allow
+twitch.tv algolianet.com xhr allow
+twitch.tv polyfill.twitchsvc.net script allow
+twitch.tv s.jtvnw.net image allow
+twitch.tv sctatic.twitchcdn.net script allow
+twitch.tv sentinel.twitchsvc.net xhr allow
+twitch.tv static-cdn.jtvnw.net image allow
+twitch.tv static.twitchcdn.net css allow
+twitch.tv static.twitchcdn.net image allow
+twitch.tv static.twitchcdn.net script allow
+twitch.tv ttvnw.net xhr allow
+twitch.tv web-cdn.ttvnw.net script allow
+
+# Github
+github.com assets-cdn.github.com css allow
+github.com assets-cdn.github.com image allow
+github.com assets-cdn.github.com script allow
+github.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com xhr allow
+github.com github-production-user-asset-6210df.s3.amazonaws.com xhr allow
+github.com raw.githubusercontent.com xhr allow
+github.com render.githubusercontent.com frame allow
+github.com render.githubusercontent.com script allow
+github.com render.githubusercontent.com xhr allow
+
+# Gitlab
+gitlab.com assets.gitlab-static.net script allow
+
+# Bandcamp
+bandcamp.com s4.bcbits.com script allow
+bandcamp.com t4.bcbits.com media allow
+
+# Soundcloud
+soundcloud.com a-v2.sndcdn.com script allow
+soundcloud.com a-v2.sndcdn.com xhr allow
+soundcloud.com cf-hls-media.sndcdn.com xhr allow
+soundcloud.com i1.sndcdn.com xhr allow
+soundcloud.com style.sndcdn.com xhr allow
+soundcloud.com wis.sndcdn.com xhr allow
