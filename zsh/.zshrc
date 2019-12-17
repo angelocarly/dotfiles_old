@@ -19,6 +19,7 @@ alias ssh="kitty +kitten ssh"
 alias panel="kitty +kitten panel"
 alias icat="kitty +kitten icat"
 alias isw="sudo isw"
+alias clk="tty-clock -t -c -C 3 -B"
 
 cheat()
 
@@ -131,3 +132,7 @@ compinit
 
 
 eval $(thefuck --alias)
+
+alias ls="exa"
+alias ll="exa -l"
+alias l="exa -la"
