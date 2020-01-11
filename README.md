@@ -27,9 +27,9 @@ If you wish to link all the folders, run `install.sh`
 
 ## Overview
 **Window manager and terminal**
-* [i3-gaps](https://github.com/Airblader/i3) - *Tiling window manager*
+* [Bspwm](https://github.com/baskerville/bspwm) - *Tiling window manager*
 * [kitty](https://sw.kovidgoyal.net/kitty/) - *Terminal*
-* [compton](https://github.com/chjj/compton) - *Compositor*
+* [picom](https://github.com/chjj/compton) - *Compositor*
 * [rofi](https://github.com/davatorium/rofi) - *Application launcher*
 * [polybar](https://github.com/polybar/polybar) - *Toolbar*
 
