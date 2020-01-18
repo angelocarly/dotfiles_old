@@ -155,6 +155,8 @@ super + KP_Subtract
 # Arrow keys to control media
 super + {Left,Down,Up,Right}
 	playerctl {previous,play-pause,stop,next}
+super + ctrl + {Left,Down,Up,Right}
+	mpc {prev,toggle,stop,next}
 # Bind XF86 keys
 XF86AudioRaiseVolume 
 	amixer -D pulse sset Master 5%+

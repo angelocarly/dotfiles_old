@@ -66,10 +66,10 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Tamzen:pixelsize=13;2
+font-0 = Tamzen7x13:pixelsize=10.3;2
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Siji:pixelsize=10;1"
-font-3 = "DejaVuSansMono Nerd Font:pixelsize=10;2"
+#font-3 = "DejaVuSansMono Nerd Font:pixelsize=10;2"
 
 modules-left = i3 bspwm cpu memory pulseaudio
 #modules-center = xwindow
