@@ -233,7 +233,7 @@ type = internal/memory
 interval = 2
 format-prefix-foreground = ${colors.foreground}
 format-prefix = "RAM " 
-label = "%percentage_used:2%%"
+label = "%gb_used%"
 label-foreground = ${colors.foreground-alt}
 
 [module/wlan]
