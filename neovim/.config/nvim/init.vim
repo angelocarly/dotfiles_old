@@ -5,9 +5,10 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='atomic'
+let g:airline_theme='wal'
 
 Plug 'tpope/vim-surround'
+Plug 'dylanaraps/wal.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -20,6 +21,6 @@ set hlsearch
 set scrolloff=5
 set tabstop=4
 set shiftwidth=4
-:colorscheme desert
+:colorscheme wal
 
 syntax on

@@ -18,8 +18,8 @@ UXTerm*cursorColor: #eeaa88
 URxvt*borderColor:  [100]#1e1e1e
 
 ! Colors 0-15.
-*.color0: #5a7260
-*color0:  #5a7260
+*.color0: #1e1e1e
+*color0:  #1e1e1e
 *.color1: #8f423c
 *color1:  #8f423c
 *.color2: #bbbb88
@@ -52,8 +52,8 @@ URxvt*borderColor:  [100]#1e1e1e
 *color15:  #f9f1ed
 
 ! Black color that will not be affected by bold highlighting.
-*.color66: #5a7260
-*color66:  #5a7260
+*.color66: #1e1e1e
+*color66:  #1e1e1e
 
 ! Xclock colors.
 XClock*foreground: #ffffff

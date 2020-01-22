@@ -5,7 +5,7 @@ let foreground = "#ffffff"
 let cursor     = "#eeaa88"
 
 " Colors
-let color0  = "#5a7260"
+let color0  = "#1e1e1e"
 let color1  = "#8f423c"
 let color2  = "#bbbb88"
 let color3  = "#f9d25b"

@@ -1,5 +1,5 @@
 static const char norm_fg[] = "#f9f1ed";
-static const char norm_bg[] = "#5a7260";
+static const char norm_bg[] = "#1e1e1e";
 static const char norm_border[] = "#8da691";
 
 static const char sel_fg[] = "#f9f1ed";

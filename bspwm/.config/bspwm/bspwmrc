@@ -40,9 +40,10 @@ xsetroot -cursor_name left_ptr &
 dunst &
 autorandr -c &
 feh --bg-fill ~/.config/wallpapers/current &
-wal -R
+wal -Rq
 $HOME/.config/polybar/launch.sh $
 picom --config ~/.config/picom/picom.conf &
+xsetwacom set 14 MapToOutput 1920x1080+0+0
 
 # Pywal colors
 . "${HOME}/.cache/wal/colors.sh"

@@ -3,7 +3,7 @@ set $wallpaper None
 set $background #1e1e1e
 set $foreground #ffffff
 
-set $color0 #5a7260
+set $color0 #1e1e1e
 set $color1 #8f423c
 set $color2 #bbbb88
 set $color3 #f9d25b

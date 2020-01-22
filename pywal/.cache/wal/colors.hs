@@ -19,7 +19,7 @@ foreground="#ffffff"
 cursor="#eeaa88"
 
 -- Colors
-color0="#5a7260"
+color0="#1e1e1e"
 color1="#8f423c"
 color2="#bbbb88"
 color3="#f9d25b"
