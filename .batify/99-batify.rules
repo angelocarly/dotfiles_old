@@ -1,0 +1,25 @@
+ACTION=="change", KERNEL=="BAT1", \
+SUBSYSTEM=="power_supply", \
+ATTR{status}=="Discharging", \
+ATTR{capacity}=="[0-9]", \
+IMPORT{program}="/usr/bin/xpub", \
+RUN+="/bin/su $env{XUSER} '/home/magnias/dotfiles/.batify/not-remaining.sh $attr{capacity} critical'"
+
+ACTION=="change", KERNEL=="BAT1", \
+SUBSYSTEM=="power_supply", \
+ATTR{status}=="Discharging", \
+ATTR{capacity}=="1[0-9]", \
+IMPORT{program}="/usr/bin/xpub", \
+RUN+="/bin/su $env{XUSER} '/home/magnias/dotfiles/.batify/not-remaining.sh $attr{capacity} normal'"
+
+SUBSYSTEM=="power_supply", ACTION=="change", \
+ENV{POWER_SUPPLY_ONLINE}=="0", ENV{POWER}="off", \
+OPTIONS+="last_rule", \
+IMPORT{program}="/usr/bin/xpub", \
+RUN+="/bin/su $env{XUSER} '/home/magnias/dotfiles/.batify/not-disconnected.sh'"
+
+SUBSYSTEM=="power_supply", ACTION=="change", \
+ENV{POWER_SUPPLY_ONLINE}=="1", ENV{POWER}="on", \
+OPTIONS+="last_rule", \
+IMPORT{program}="/usr/bin/xpub", \
+RUN+="/bin/su $env{XUSER} '/home/magnias/dotfiles/.batify/not-pluggedin.sh'"
