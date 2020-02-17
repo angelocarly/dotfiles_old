@@ -75,7 +75,7 @@ modules-left = i3 bspwm cpu memory pulseaudio
 #modules-center = xwindow
 modules-center = spotify 
 #modules-right = pulseaudio memory cpu wlan eth battery temperature date
-modules-right = wlan eth0 temperature battery date
+modules-right = wired-network wireless-network temperature battery date
 
 separator = |
 
@@ -236,7 +236,7 @@ format-prefix = "RAM "
 label = "%gb_used%"
 label-foreground = ${colors.foreground-alt}
 
-[module/wlan]
+[module/wireless-network]
 type = internal/network
 interface = wlo1
 interval = 3.0
@@ -258,7 +258,7 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground}
 
-[module/eth]
+[module/wired-network]
 type = internal/network
 interface = enp2s0
 interval = 3.0
