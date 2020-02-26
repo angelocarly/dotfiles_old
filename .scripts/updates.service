@@ -1,0 +1,14 @@
+[Unit]
+Description=Arch update notifier
+
+[Service]
+Type=simple
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=%h/.Xauthority
+ExecStart=/bin/bash %h/dotfiles/.scripts/updates.sh
+Restart=always
+RestartSec=3600
+
+[Install]
+WantedBy=default.target
+ 

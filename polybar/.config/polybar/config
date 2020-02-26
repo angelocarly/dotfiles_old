@@ -264,11 +264,11 @@ interface = enp2s0
 interval = 3.0
 
 # format-connected-underline = #55aa55
-format-connected-prefix = "NET "
+format-connected-prefix = "ETH "
 # format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
-format-disconnected =
+format-disconnected = 
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected

@@ -23,3 +23,9 @@ ENV{POWER_SUPPLY_ONLINE}=="1", ENV{POWER}="on", \
 OPTIONS+="last_rule", \
 IMPORT{program}="/usr/bin/xpub", \
 RUN+="/bin/su $env{XUSER} '/home/magnias/dotfiles/.batify/not-pluggedin.sh'"
+
+# Hibernate when power drops too low
+SUBSYSTEM=="power_supply", \
+ATTR{status}=="Discharging", \
+ATTR{capacity}=="[0-10]", \
+RUN+="/usr/bin/systemctl hibernate"
