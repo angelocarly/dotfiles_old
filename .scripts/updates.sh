@@ -1,4 +1,5 @@
-upd=$(pacman -Qu)
+yay -Syy > /dev/null 2>&1
+upd=$(yay -Qu)
 
 if [ ! -z "${upd}" ]
 then
