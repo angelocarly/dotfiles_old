@@ -75,7 +75,7 @@ modules-left = i3 bspwm cpu memory pulseaudio
 #modules-center = xwindow
 modules-center = spotify 
 #modules-right = pulseaudio memory cpu wlan eth battery temperature date
-modules-right = wired-network wireless-network temperature battery date
+modules-right = wired-network wireless-network updates-arch-combined temperature battery date
 
 separator = |
 
@@ -99,6 +99,13 @@ cursor-scroll = ns-resize
 
 
 # =========================== Modules ==================================
+
+[module/updates-arch-combined]
+type = custom/script
+exec = $HOME/.config/polybar/updates-arch-combined.sh
+interval = 600
+format-prefix = "U "
+label-foreground = ${colors.foreground-alt}
 
 [module/xwindow]
 type = internal/xwindow
