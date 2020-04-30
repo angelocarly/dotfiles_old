@@ -128,7 +128,10 @@ super + equal
 	betterlockscreen -l
 
 super + u
-	tdrop -ma -w 90% -h 90% -x 5% -y 5% -s dropdown kitty -o background_opacity=0.7
+	tdrop -ma -w 90% -h 90% -x 5% -y 5% -s dropdown kitty -o background_opacity=0.85
+
+super + n
+	tdrop -ma -w 90% -h 90% -x 5% -y 5% pavucontrol
 
 #
 # Screenshot
