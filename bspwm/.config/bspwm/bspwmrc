@@ -27,6 +27,7 @@ bspc config gapless_monocle      true
 bspc config single_monocle 		 true
 bspc config pointer_follows_monitor	true
 
+bspc rule -a qutebrowser state=floating
 #bspc rule -a Gimp desktop='^8' state=floating follow=on
 #bspc rule -a Chromium desktop='^2'
 #bspc rule -a mplayer2 state=floating
@@ -40,6 +41,7 @@ setxkbmap -option caps:super
 xsetroot -cursor_name left_ptr &
 
 # Run applications
+tmux new-session -d -s protonbridge protonmail-bridge -c &
 dunst &
 autorandr -c &
 feh --bg-fill ~/.config/wallpapers/current &

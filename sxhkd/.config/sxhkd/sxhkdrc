@@ -133,6 +133,9 @@ super + u
 super + n
 	tdrop -ma -w 90% -h 90% -x 5% -y 5% pavucontrol
 
+super + a
+	tdrop -ma -w 90% -h 90% -x 5% -y 5% -n 2 kitty zsh -c "neomutt"
+
 #
 # Screenshot
 #

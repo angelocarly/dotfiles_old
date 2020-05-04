@@ -1,0 +1,91 @@
+set mailcap_path 	= ~/.config/neomutt/mailcap
+bind index,pager V  noop        ## Unbinds V from version
+macro index,pager V "<view-attachments><search>html<enter><view-mailcap><exit>"
+set new_mail_command="notify-send --icon='/home/santiago/Pictures/neomutt.png' \
+'New Email' '%n new messages, %u unread.' &"
+
+set realname='Angelo Carly'
+set from="Angelo Carly <angelo.carly@protonmail.com>"
+set timeout=60
+
+# "+" substitutes for `folder`
+set mbox_type=Maildir
+set folder=~/.mail/
+set spoolfile="+INBOX"
+set record=+Sent
+set postponed=+Drafts
+set trash=+Trash
+set mail_check=20 # seconds
+
+set virtual_spoolfile # use first defined virtual-mailbox as spool
+virtual-mailboxes "INBOX" "notmuch://?query=folder:INBOX"
+virtual-mailboxes "Archive" "notmuch://?query=folder:Archive"
+virtual-mailboxes "Sent" "notmuch://?query=folder:Sent"
+virtual-mailboxes "Trash" "notmuch://?query=folder:Trash"
+
+# smtp
+source ~/Documents/keys/mail
+set smtp_url=smtp://$my_user:$my_pass@127.0.0.1:1025
+set ssl_force_tls
+set ssl_starttls
+set imap_user="$my_user"
+set imap_pass="#my_pass"
+
+# index interface
+set mail_check_stats    # poll read/unread/etc counts
+set sidebar_visible
+set sidebar_width=15
+set sidebar_format="%B%* %S"
+set index_format="[%Z] %-10g %{%b %d}  %-20.20F  %s"
+# set index_format="[%Z] %-10y %{%b %d}  %-20.20F  %s"
+set status_format="-%f %V%>-"
+set sort=threads
+set sort_aux=reverse-last-date-received
+
+auto_view text/html
+
+# colors
+# color normal white default
+# color attachment red default
+# color hdrdefault cyan default
+# color indicator brightyellow default
+# color markers brightred default
+# color quoted cyan default
+# color quoted1 magenta default
+# color quoted2 blue default
+# color signature yellow default
+# color status default default
+# color tilde blue default
+# color tree brightred default
+# color header brightyellow default ^From:
+# color header yellow default ^To:
+# color header brightcyan default ^Date
+# color header yellow default ^Cc:
+# color header brightgreen default ^Subject:
+# color header brightcyan default ^X-TRASH:
+source colors.muttrc
+
+# New mail is boldened:
+color index brightyellow black "~N"
+color index_author brightred black "~N"
+color index_subject brightcyan black "~N"
+
+# vim-like bindings
+bind index,pager g noop
+bind pager gg top
+bind pager G bottom
+bind alias,index,browser,query gg first-entry
+bind alias,index,browser,query G last-entry
+bind pager j next-line
+bind pager k previous-line
+bind pager \Cj next-entry
+bind pager \Ck previous-entry
+bind index za collapse-thread
+bind index D delete-thread
+bind alias,index,pager,browser,query \Cd half-down
+bind alias,index,pager,browser,query \Cu half-up
+bind index,pager y group-reply
+
+# go to first entry instead of first unread entry
+# when loading a folder
+folder-hook . 'push <first-entry>'
