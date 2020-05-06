@@ -1,0 +1,23 @@
+IMAPAccount proton
+Host 127.0.0.1
+Port 1143
+User angelo.carly@protonmail.com
+Pass -i2ymfP3Y8A-1MUbsmtJTA
+SSLType None
+
+IMAPStore proton-remote
+Account proton
+
+MaildirStore proton-local
+Subfolders Verbatim
+Path ~/.mail/proton/
+Inbox ~/.mail/proton/INBOX
+
+create Both
+Expunge Both
+SyncState *
+
+Channel proton
+Master :proton-remote:
+Slave :proton-local:
+Patterns *

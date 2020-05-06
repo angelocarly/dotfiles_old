@@ -1,75 +1,53 @@
-set mailcap_path 	= ~/.config/neomutt/mailcap
-bind index,pager V  noop        ## Unbinds V from version
-macro index,pager V "<view-attachments><search>html<enter><view-mailcap><exit>"
-set new_mail_command="notify-send --icon='/home/santiago/Pictures/neomutt.png' \
-'New Email' '%n new messages, %u unread.' &"
+# vim: filetype=neomuttrc
 
-set realname='Angelo Carly'
-set from="Angelo Carly <angelo.carly@protonmail.com>"
-set timeout=60
-
-# "+" substitutes for `folder`
-set mbox_type=Maildir
+# Base
+set editor=nvim
 set folder=~/.mail/
-set spoolfile="+INBOX"
-set record=+Sent
-set postponed=+Drafts
-set trash=+Trash
-set mail_check=20 # seconds
+set my_cfgdir = "~/.config/neomutt"
+set mailcap_path = $my_cfgdir/mailcap
 
-set virtual_spoolfile # use first defined virtual-mailbox as spool
-virtual-mailboxes "INBOX" "notmuch://?query=folder:INBOX"
-virtual-mailboxes "Archive" "notmuch://?query=folder:Archive"
-virtual-mailboxes "Sent" "notmuch://?query=folder:Sent"
-virtual-mailboxes "Trash" "notmuch://?query=folder:Trash"
+# Mailboxes
+source $my_cfgdir/hooks
+source $my_cfgdir/mailboxes
+set timeout=30
+
+# Settings
+set mbox_type=Maildir
+set mail_check=20 # seconds
+set mail_check_stats    # poll read/unread/etc counts
+set wait_key = no
+set sidebar_visible
+set sleep_time = 0
+set sort = "reverse-date"
+unset markers
+unset mime_forward
+unset mime_forward_rest
+# set sidebar_width=15
+set sidebar_format="%B%* %S"
+set index_format="[%Z] %-10g %{%b %d}  %-20.20F  %s"
+set status_format="-%f %V%>-"
+set sort=threads
+set sort_aux=reverse-last-date-received
 
 # smtp
 source ~/Documents/keys/mail
 set smtp_url=smtp://$my_user:$my_pass@127.0.0.1:1025
 set ssl_force_tls
 set ssl_starttls
-set imap_user="$my_user"
-set imap_pass="#my_pass"
 
-# index interface
-set mail_check_stats    # poll read/unread/etc counts
-set sidebar_visible
-set sidebar_width=15
-set sidebar_format="%B%* %S"
-set index_format="[%Z] %-10g %{%b %d}  %-20.20F  %s"
-# set index_format="[%Z] %-10y %{%b %d}  %-20.20F  %s"
-set status_format="-%f %V%>-"
-set sort=threads
-set sort_aux=reverse-last-date-received
 
+# Other settings {{{
 auto_view text/html
+folder-hook . 'push <first-entry>'                     # Focus first mail
+set new_mail_command="notify-send --icon='/home/santiago/Pictures/neomutt.png' \
+'New Email' '%n new messages, %u unread.' &"
+# }}}
 
-# colors
-# color normal white default
-# color attachment red default
-# color hdrdefault cyan default
-# color indicator brightyellow default
-# color markers brightred default
-# color quoted cyan default
-# color quoted1 magenta default
-# color quoted2 blue default
-# color signature yellow default
-# color status default default
-# color tilde blue default
-# color tree brightred default
-# color header brightyellow default ^From:
-# color header yellow default ^To:
-# color header brightcyan default ^Date
-# color header yellow default ^Cc:
-# color header brightgreen default ^Subject:
-# color header brightcyan default ^X-TRASH:
-source colors.muttrc
+# macros {{{
+macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
+# }}}
 
-# New mail is boldened:
-color index brightyellow black "~N"
-color index_author brightred black "~N"
-color index_subject brightcyan black "~N"
-
+# UI {{{
 # vim-like bindings
 bind index,pager g noop
 bind pager gg top
@@ -85,7 +63,76 @@ bind index D delete-thread
 bind alias,index,pager,browser,query \Cd half-down
 bind alias,index,pager,browser,query \Cu half-up
 bind index,pager y group-reply
+bind index,pager V  noop        ## Unbinds V from version
+macro index,pager V "<view-attachments><search>html<enter><view-mailcap><exit>"
+### }}}
 
-# go to first entry instead of first unread entry
-# when loading a folder
-folder-hook . 'push <first-entry>'
+
+# Colors {{{
+# Default index colors:
+color index yellow default '.*'
+color index_author red default '.*'
+color index_number blue default
+color index_subject cyan default '.*'
+
+# For new mail:
+color index brightyellow black "~N"
+color index_author brightred black "~N"
+color index_subject brightcyan black "~N"
+
+# Header colors:
+color header blue default ".*"
+color header brightmagenta default "^(From)"
+color header brightcyan default "^(Subject)"
+color header brightwhite default "^(CC|BCC)"
+
+mono bold bold
+mono underline underline
+mono indicator reverse
+mono error bold
+color normal default default
+color indicator brightblack white
+color sidebar_highlight red default
+color sidebar_divider brightblack black
+color sidebar_flagged red black
+color sidebar_new green black
+color normal brightyellow default
+color error red default
+color tilde black default
+color message cyan default
+color markers red white
+color attachment white default
+color search brightmagenta default
+color status brightyellow black
+color hdrdefault brightgreen default
+color quoted green default
+color quoted1 blue default
+color quoted2 cyan default
+color quoted3 yellow default
+color quoted4 red default
+color quoted5 brightred default
+color signature brightgreen default
+color bold black default
+color underline black default
+color normal default default
+
+color body brightred default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" # Email addresses
+color body brightblue default "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+" # URL
+color body green default "\`[^\`]*\`" # Green text between ` and `
+color body brightblue default "^# \.*" # Headings as bold blue
+color body brightcyan default "^## \.*" # Subheadings as bold cyan
+color body brightgreen default "^### \.*" # Subsubheadings as bold green
+color body yellow default "^(\t| )*(-|\\*) \.*" # List items as yellow
+color body brightcyan default "[;:][-o][)/(|]" # emoticons
+color body brightcyan default "[;:][)(|]" # emoticons
+color body brightcyan default "[ ][*][^*]*[*][ ]?" # more emoticon?
+color body brightcyan default "[ ]?[*][^*]*[*][ ]" # more emoticon?
+color body red default "(BAD signature)"
+color body cyan default "(Good signature)"
+color body brightblack default "^gpg: Good signature .*"
+color body brightyellow default "^gpg: "
+color body brightyellow red "^gpg: BAD signature from.*"
+mono body bold "^gpg: Good signature"
+mono body bold "^gpg: BAD signature from.*"
+color body red default "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
+# }}}

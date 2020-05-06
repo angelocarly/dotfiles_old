@@ -1,0 +1,7 @@
+mailboxes "+/proton/INBOX"
+mailboxes "+/proton/Drafts"
+mailboxes "+/proton/Sent"
+mailboxes "+/proton/Archive"
+mailboxes "+/proton/Spam"
+mailboxes "+/proton/Trash"
+

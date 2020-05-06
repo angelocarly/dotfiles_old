@@ -1,0 +1,9 @@
+# vim: filetype=neomuttrc
+set realname  = "Angelo Carly"
+set from      = "angelo.carly@protonmail.com"
+set spoolfile = "+/proton/INBOX"
+set postponed = "+/proton/Drafts"
+set record    = "+/proton/Sent"
+set trash     = "+/proton/Bin"
+set sendmail  = "/usr/bin/msmtp -a proton"
+

@@ -1,0 +1,14 @@
+# vim: filetype=msmtp
+defaults
+auth on
+tls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+
+# Protonmail
+account proton
+host 127.0.0.1
+port 1025
+from angelo.carly@protonmail.com
+user angelo.carly@protonmail.com
+passwordeval "pass mail/protonmail"
+tls_starttls off

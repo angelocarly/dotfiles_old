@@ -1,0 +1,3 @@
+# vim: filetype=neomuttrc
+set spoolfile = "+/proton/INBOX"
+folder-hook proton source $my_cfgdir/accounts/proton
