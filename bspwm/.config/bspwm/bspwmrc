@@ -7,17 +7,21 @@ setxkbmap -option caps:super
 pkill sxhkd
 sxhkd &
 
+# Monitor config
+# PRIMARY_MONITOR="eDP-1-1"
+# SECONDARY_MONITOR="HDMI-1-2"
+PRIMARY_MONITOR="eDP1" # Hybrid monitors
+SECONDARY_MONITOR="HDMI2"
+
 # Workspace settings
-external_monitor_status=$(xrandr --query | grep 'HDMI-1-2')
+external_monitor_status=$(xrandr --query | grep $SECONDARY_MONITOR)
 case "$external_monitor_status" in
   *disconnected*) 
-	bspc monitor eDP-1-1 -d 1 2 3 4 5 6 7 8 9 10
+	bspc monitor $PRIMARY_MONITOR -d 1 2 3 4 5 6 7 8 9 10
 	;;
   *) 
-	#bspc monitor eDP-1-1 -d 1 2 3 4 5 
-	bspc monitor eDP-1-1 -d 1 2 3 4 5
-	bspc monitor HDMI-1-2 -d 6 7 8 9 10 
-	#bspc monitor HDMI-1-2 -d 6 7 8 9 10
+	bspc monitor $PRIMARY_MONITOR -d 1 2 3 4 5
+	bspc monitor $SECONDARY_MONITOR -d 6 7 8 9 10 
 	;;
 esac
 
@@ -32,7 +36,7 @@ bspc config single_monocle 		 true
 bspc config pointer_follows_monitor	true
 
 bspc rule -a qutebrowser state=floating
-bspc rule -a zathura state=tiled
+bspc rule -a Zathura state=tiled
 bspc rule --add scratchpad sticky=true
 
 # Use the default x cursor
@@ -41,7 +45,7 @@ xsetroot -cursor_name left_ptr &
 # Run applications
 tmux new-session -d -s protonbridge protonmail-bridge -c &
 dunst &
-autorandr -c &
+#autorandr -c &
 feh --bg-fill ~/.config/wallpapers/current &
 wal -Rq
 $HOME/.config/polybar/launch.sh $

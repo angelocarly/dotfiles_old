@@ -153,6 +153,12 @@ super + ctrl + {p,o}
 	light -{A,U} 5%
 
 #
+# Keyboard
+#
+
+
+
+#
 # Audio and playback
 #
 

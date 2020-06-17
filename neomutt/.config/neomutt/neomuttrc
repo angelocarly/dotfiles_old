@@ -28,6 +28,11 @@ set index_format="[%Z] %-10g %{%b %d}  %-20.20F  %s"
 set status_format="-%f %V%>-"
 set sort=threads
 set sort_aux=reverse-last-date-received
+set mark_old=no
+
+# notmuch
+set virtual_spoolfile=yes
+
 
 # smtp
 source ~/Documents/keys/mail

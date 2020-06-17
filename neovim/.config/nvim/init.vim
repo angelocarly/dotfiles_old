@@ -15,15 +15,19 @@ Plug 'flw-cn/vim-nerdtree-l-open-h-close'
 Plug 'racer-rust/vim-racer'
 Plug 'raimondi/delimitmate'
 Plug 'liuchengxu/vim-clap'
+Plug 'lervag/vimtex'
 
 " rust
 Plug 'rust-lang/rust.vim'
+let g:vimtex_compiler_progname = 'nvr'
 
 " Initialize plugin system
 call plug#end()
 
+" General config
 inoremap kj <Esc>  
 
+set mouse=a
 set number
 set relativenumber
 set hlsearch
@@ -32,6 +36,7 @@ set tabstop=4
 set shiftwidth=4
 colorscheme wal
 
+" vimtex
 syntax on
 
 " Nerdtree shortcut
@@ -48,4 +53,3 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-

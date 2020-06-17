@@ -1,6 +1,7 @@
 export EDITOR="nvim"
 export ZSH="/home/magnias/.oh-my-zsh"
 export PYTHONPATH=$PYTHONPATH:/home/magnias/.config/dev/python/python-files
+export KALI=root@192.168.122.30
 
 ZSH_THEME="blinks-mag"
 
@@ -15,9 +16,8 @@ alias ssh="kitty +kitten ssh"
 alias imcat="kitty +kitten icat"
 alias isw="sudo isw"
 alias clk="tty-clock -t -c -C 3 -B"
-alias mountefi="sudo mount /dev/nvme0n1p1 /efi"
 alias dragon="dragon-drag-and-drop"
-alias azerty="loadkeys be-latin1"
+alias o="xdg-open"
 
 
 # Plugins

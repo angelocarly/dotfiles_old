@@ -1,3 +1,4 @@
 #!/bin/bash
 
-feh --bg-scale ~/.config/wallpapers/current
+sleep 5
+bspc wm -r

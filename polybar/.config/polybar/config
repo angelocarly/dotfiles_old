@@ -37,7 +37,7 @@ c16 = ${xrdb:color16}
 background = ${xrdb:color16:#222}
 background-alt = ${xrdb:color1:#444}
 foreground = ${xrdb:color7:#222}
-foreground-alt = ${xrdb:color6:#555}
+foreground-alt = ${xrdb:color4:#555}
 primary = ${xrdb:color5:#222}
 ;primary = #ffb52a
 secondary = #e60053
@@ -71,7 +71,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Siji:pixelsize=10;1"
 #font-3 = "DejaVuSansMono Nerd Font:pixelsize=10;2"
 
-modules-left = i3 bspwm cpu memory pulseaudio
+modules-left = i3 bspwm cpu memory filesystem pulseaudio pulseaudio-int
 #modules-center = xwindow
 modules-center = spotify 
 #modules-right = pulseaudio memory cpu wlan eth battery temperature date
@@ -105,7 +105,8 @@ type = custom/script
 exec = $HOME/.config/polybar/updates-arch-combined.sh
 interval = 600
 format-prefix = "U "
-label-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.foreground-alt}
+label-foreground = ${colors.foreground}
 
 [module/xwindow]
 type = internal/xwindow
@@ -142,7 +143,10 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+format-mounted = /<label-mounted>
+format-mounted-foreground = ${colors.foreground-alt}
+label-mounted = : %free%
+label-mounted-foreground = ${colors.foreground}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -230,18 +234,18 @@ label-monitor = %name%
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix-foreground = ${colors.foreground}
+format-prefix-foreground = ${colors.foreground-alt}
 format-prefix = "CPU "
 label = "%percentage:2%%"
-label-foreground = ${colors.foreground-alt}
+label-foreground = ${colors.foreground}
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix-foreground = ${colors.foreground}
+format-prefix-foreground = ${colors.foreground-alt}
 format-prefix = "RAM " 
 label = "%gb_used%"
-label-foreground = ${colors.foreground-alt}
+label-foreground = ${colors.foreground}
 
 [module/wireless-network]
 type = internal/network
@@ -301,17 +305,72 @@ label = %date%%time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = VOL <label-volume>
-format-volume-foreground = ${colors.foreground}
-label-volume-foreground = ${colors.foreground-alt}
-label-volume = %percentage%%
-use-ui-max = false
-
-#format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground}
-label-muted-foreground = ${colors.foreground-alt}
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+ 
+format-volume = VOL <ramp-volume>
+format-volume-foreground = ${colors.foreground-alt}
+label-volume = ''
+ramp-volume-foreground = ${colors.foreground}
 format-muted = VOL <label-muted>
+format-muted-foreground = ${colors.foreground-alt}
+#format-muted-prefix = "  "
 label-muted = mute
+label-muted-foreground = ${colors.foreground}
+ramp-volume-0 = |-----
+ramp-volume-1 = -|----
+ramp-volume-2 = --|---
+ramp-volume-3 = ---|--
+ramp-volume-4 = ----|-
+ramp-volume-5 = -----|
+#ramp-volume-foreground = ${color.foreground}
+ramp-headphones-0 = H
+ramp-headphones-1 = S
+# format-volume = VOL <label-volume>
+# format-volume-foreground = ${colors.foreground}
+# label-volume-foreground = ${colors.foreground-alt}
+# label-volume = %percentage%%
+# use-ui-max = false
+# 
+# #format-muted-prefix = " "
+# format-muted-foreground = ${colors.foreground}
+# label-muted-foreground = ${colors.foreground-alt}
+# format-muted = VOL <label-muted>
+# label-muted = mute
+
+[module/pulseaudio-int]
+type = internal/pulseaudio
+
+sink = alsa_output.usb-Focusrite_Scarlett_2i2_USB_Y8HE7009A25E43-00.analog-stereo
+ 
+format-volume = VOL <ramp-volume>
+format-volume-foreground = ${colors.foreground-alt}
+label-volume = ''
+ramp-volume-foreground = ${colors.foreground}
+format-muted = VOL <label-muted>
+format-muted-foreground = ${colors.foreground-alt}
+#format-muted-prefix = "  "
+label-muted = mute
+label-muted-foreground = ${colors.foreground}
+ramp-volume-0 = |-----
+ramp-volume-1 = -|----
+ramp-volume-2 = --|---
+ramp-volume-3 = ---|--
+ramp-volume-4 = ----|-
+ramp-volume-5 = -----|
+#ramp-volume-foreground = ${color.foreground}
+ramp-headphones-0 = H
+ramp-headphones-1 = S
+# format-volume = VOL <label-volume>
+# format-volume-foreground = ${colors.foreground}
+# label-volume-foreground = ${colors.foreground-alt}
+# label-volume = %percentage%%
+# use-ui-max = false
+# 
+# #format-muted-prefix = " "
+# format-muted-foreground = ${colors.foreground}
+# label-muted-foreground = ${colors.foreground-alt}
+# format-muted = VOL <label-muted>
+# label-muted = mute
 
 [module/battery]
 type = internal/battery
@@ -322,17 +381,17 @@ adapter = ADP1
 full-at = 95
 
 #format-charging = <animation-charging> <label-charging>
-label-charging-foreground = ${colors.foreground-alt}
+label-charging-foreground = ${colors.foreground}
 format-charging = BAT <label-charging>
-format-charging-foreground = ${colors.foreground}
+format-charging-foreground = ${colors.foreground-alt}
 
-label-discharging-foreground = ${colors.foreground-alt}
+label-discharging-foreground = ${colors.foreground}
 format-discharging = BAT <label-discharging>
-format-discharging-foreground = ${colors.foreground}
+format-discharging-foreground = ${colors.foreground-alt}
 
-label-full-foreground = ${colors.foreground-alt}
+label-full-foreground = ${colors.foreground}
 format-full = BAT <label-full>
-format-full-foreground = ${colors.foreground}
+format-full-foreground = ${colors.foreground-alt}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
