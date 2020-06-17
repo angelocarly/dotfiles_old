@@ -1,5 +1,5 @@
 export EDITOR="nvim"
-export ZSH="/root/.oh-my-zsh"
+export ZSH=$HOME"/.oh-my-zsh"
 export PYTHONPATH=$PYTHONPATH:/home/magnias/.config/dev/python/python-files
 export KALI=root@192.168.122.30
 
