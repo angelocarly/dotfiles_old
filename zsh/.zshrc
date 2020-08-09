@@ -18,7 +18,8 @@ alias isw="sudo isw"
 alias clk="tty-clock -t -c -C 3 -B"
 alias dragon="dragon-drag-and-drop"
 alias o="xdg-open"
-
+alias rep="until !!; do sleep 5 ; done"
+alias nmap="grc sudo nmap"
 
 # Plugins
 plugins=(

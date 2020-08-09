@@ -71,7 +71,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Siji:pixelsize=10;1"
 #font-3 = "DejaVuSansMono Nerd Font:pixelsize=10;2"
 
-modules-left = i3 bspwm cpu memory filesystem pulseaudio pulseaudio-int
+modules-left = i3 bspwm cpu memory filesystem pulseaudio-int
 #modules-center = xwindow
 modules-center = spotify 
 #modules-right = pulseaudio memory cpu wlan eth battery temperature date
@@ -301,41 +301,6 @@ format-prefix =
 # format-underline = #0a6cf5
 
 label = %date%%time%
-
-[module/pulseaudio]
-type = internal/pulseaudio
-
-sink = alsa_output.pci-0000_00_1f.3.analog-stereo
- 
-format-volume = VOL <ramp-volume>
-format-volume-foreground = ${colors.foreground-alt}
-label-volume = ''
-ramp-volume-foreground = ${colors.foreground}
-format-muted = VOL <label-muted>
-format-muted-foreground = ${colors.foreground-alt}
-#format-muted-prefix = "  "
-label-muted = mute
-label-muted-foreground = ${colors.foreground}
-ramp-volume-0 = |-----
-ramp-volume-1 = -|----
-ramp-volume-2 = --|---
-ramp-volume-3 = ---|--
-ramp-volume-4 = ----|-
-ramp-volume-5 = -----|
-#ramp-volume-foreground = ${color.foreground}
-ramp-headphones-0 = H
-ramp-headphones-1 = S
-# format-volume = VOL <label-volume>
-# format-volume-foreground = ${colors.foreground}
-# label-volume-foreground = ${colors.foreground-alt}
-# label-volume = %percentage%%
-# use-ui-max = false
-# 
-# #format-muted-prefix = " "
-# format-muted-foreground = ${colors.foreground}
-# label-muted-foreground = ${colors.foreground-alt}
-# format-muted = VOL <label-muted>
-# label-muted = mute
 
 [module/pulseaudio-int]
 type = internal/pulseaudio

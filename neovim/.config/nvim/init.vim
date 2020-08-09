@@ -34,6 +34,8 @@ set hlsearch
 set scrolloff=5
 set tabstop=4
 set shiftwidth=4
+set ignorecase
+set hidden
 colorscheme wal
 
 " vimtex

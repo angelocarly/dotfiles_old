@@ -1,19 +1,19 @@
 #! /bin/sh
 
-# unmap caps lock
+## Unmap caps lock
 numlockx on &
 setxkbmap -option caps:super
 
 pkill sxhkd
 sxhkd &
 
-# Monitor config
+#@ Monitor config
 # PRIMARY_MONITOR="eDP-1-1"
 # SECONDARY_MONITOR="HDMI-1-2"
 PRIMARY_MONITOR="eDP1" # Hybrid monitors
 SECONDARY_MONITOR="HDMI2"
 
-# Workspace settings
+## Workspace settings
 external_monitor_status=$(xrandr --query | grep $SECONDARY_MONITOR)
 case "$external_monitor_status" in
   *disconnected*) 
@@ -25,25 +25,56 @@ case "$external_monitor_status" in
 	;;
 esac
 
-# bspc settings
+## Bspwm config
 bspc config border_width		1
 bspc config window_gap			3
-
 bspc config split_ratio          0.52
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
-bspc config single_monocle 		 true
-bspc config pointer_follows_monitor	true
+# bspc config automatic_scheme longest_side;
+bspc config initial_polarity second_child;
+bspc config directional_focus_tightness high;
+bspc config borderless_monocle true;
+bspc config single_monocle true;
+bspc config gapless_monocle true;
+# bspc config paddingless_monocle true;
+# bspc config top_monocle_padding 0;
+# bspc config right_monocle_padding 0;
+# bspc config bottom_monocle_padding 0;
+# bspc config left_monocle_padding 0;
+# bspc config single_monocle true;
+# pointer_motion_interval;
+# bspc config pointer_modifier mod4;
+# bspc config pointer_action1 move;
+# bspc config pointer_action2 resize_side;
+# bspc config pointer_action3 resize_corner;
+# bspc config click_to_focus button1;
+# bspc config swallow_first_click false;
+# bspc config focus_follows_pointer false;
+# bspc config pointer_follows_focus false;
+bspc config pointer_follows_monitor true;
+# bspc config mapping_events_count -1;
+# bspc config ignore_ewmh_focus true;
+# bspc config ignore_ewmh_fullscreen all;
+# bspc config ignore_ewmh_struts true;
+bspc config center_pseudo_tiled true;
+# bspc config honor_size_hints false;
+bspc config remove_disabled_monitors true;
+# bspc config removal_adjustment true;
+bspc config remove_unplugged_monitors true;
+# bspc config merge_overlapping_monitors true;
 
-bspc rule -a qutebrowser state=floating
+# bspc rule -a qutebrowser state=floating
 bspc rule -a Zathura state=tiled
 bspc rule --add scratchpad sticky=true
+bspc rule -a Vivaldi-stable desktop=^1
+bspc rule -a discord desktop=^2
 
-# Use the default x cursor
+#@ Use the default x cursor
 xsetroot -cursor_name left_ptr &
+xset r rate 250 30
 
-# Run applications
+## Launch applications
 tmux new-session -d -s protonbridge protonmail-bridge -c &
+tmux new-session -d -s mail neomutt &
 dunst &
 #autorandr -c &
 feh --bg-fill ~/.config/wallpapers/current &
@@ -52,7 +83,7 @@ $HOME/.config/polybar/launch.sh $
 picom --config ~/.config/picom/picom.conf &
 xsetwacom --set "Wacom Bamboo One S Pen stylus" MapToOutput 1920x1080+0+0
 
-# colors
+#$ Colors
 . "${HOME}/.cache/wal/colors.sh"
 bspc config normal_border_color "$color0"
 bspc config active_border_color "$color0"
