@@ -8,22 +8,7 @@ pkill sxhkd
 sxhkd &
 
 #@ Monitor config
-# PRIMARY_MONITOR="eDP-1-1"
-# SECONDARY_MONITOR="HDMI-1-2"
-PRIMARY_MONITOR="eDP1" # Hybrid monitors
-SECONDARY_MONITOR="HDMI2"
-
-## Workspace settings
-external_monitor_status=$(xrandr --query | grep $SECONDARY_MONITOR)
-case "$external_monitor_status" in
-  *disconnected*) 
-	bspc monitor $PRIMARY_MONITOR -d 1 2 3 4 5 6 7 8 9 10
-	;;
-  *) 
-	bspc monitor $PRIMARY_MONITOR -d 1 2 3 4 5
-	bspc monitor $SECONDARY_MONITOR -d 6 7 8 9 10 
-	;;
-esac
+./monitor_setup.sh
 
 ## Bspwm config
 bspc config border_width		1
@@ -63,10 +48,12 @@ bspc config remove_unplugged_monitors true;
 # bspc config merge_overlapping_monitors true;
 
 # bspc rule -a qutebrowser state=floating
+#bspc config external_rules_command ~/.config/bspwm/external_rules.sh
 bspc rule -a Zathura state=tiled
 bspc rule --add scratchpad sticky=true
 bspc rule -a Vivaldi-stable desktop=^1
 bspc rule -a discord desktop=^2
+bspc rule -a mpv state=floating
 
 #@ Use the default x cursor
 xsetroot -cursor_name left_ptr &

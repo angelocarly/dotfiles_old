@@ -38,6 +38,11 @@
     padding: 0;
 }}
 
+element-icon {{
+	size: 18;
+    border: 0px;
+}}
+
 #message {{
     border: 2px 0px 0px;
     border-color: @border-color;

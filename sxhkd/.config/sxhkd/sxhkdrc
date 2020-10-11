@@ -19,8 +19,8 @@ super + Escape
 #
 
 # quit/restart bspwm
-super + alt + {q,r}
-	bspc {quit,wm -r}
+super + alt + r
+	~/.config/bspwm/reload
 
 # close and kill
 super + {_,shift + }q
