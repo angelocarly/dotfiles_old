@@ -1,3 +1,2 @@
-~/.config/bspwm/monitor_setup.sh
-echo test > /home/magnias/.config/bspwm/test
 bspc wm -r 
+~/.config/bspwm/monitor_setup.sh

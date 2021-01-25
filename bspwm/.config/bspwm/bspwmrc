@@ -7,8 +7,6 @@ setxkbmap -option caps:super
 pkill sxhkd
 sxhkd &
 
-#@ Monitor config
-./monitor_setup.sh
 
 ## Bspwm config
 bspc config border_width		1
@@ -54,6 +52,14 @@ bspc rule --add scratchpad sticky=true
 bspc rule -a Vivaldi-stable desktop=^1
 bspc rule -a discord desktop=^2
 bspc rule -a mpv state=floating
+
+#@ Add virtual monitor
+#bspc wm -a virt 3840x1060+0+20
+#bspc monitor virt -d virt
+#@ Monitor config
+/home/magnias/.config/bspwm/monitor_setup.sh
+#@ Reorder monitors to end with virt
+bspc wm -O $(xrandr | awk '/ connected/{print $1}' | tr '\n' ' ')
 
 #@ Use the default x cursor
 xsetroot -cursor_name left_ptr &

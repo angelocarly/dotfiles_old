@@ -16,6 +16,9 @@ Plug 'racer-rust/vim-racer'
 Plug 'raimondi/delimitmate'
 Plug 'liuchengxu/vim-clap'
 Plug 'lervag/vimtex'
+Plug 'eagletmt/ghcmod-vim' " Reveal types as you code
+Plug 'Shougo/vimproc'
+" haskell
 
 " rust
 Plug 'rust-lang/rust.vim'

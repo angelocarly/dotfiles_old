@@ -75,7 +75,7 @@ modules-left = i3 bspwm cpu memory filesystem pulseaudio-int
 #modules-center = xwindow
 modules-center = spotify 
 #modules-right = pulseaudio memory cpu wlan eth battery temperature date
-modules-right = wired-network wireless-network updates-arch-combined temperature battery date
+modules-right = wired-network wireless-network updates-arch-combined temperature battery date menu-apps
 
 separator = |
 
@@ -99,6 +99,39 @@ cursor-scroll = ns-resize
 
 
 # =========================== Modules ==================================
+
+[module/menu-apps]
+type = custom/menu
+
+; If true, <label-toggle> will be to the left of the menu items (default).
+; If false, it will be on the right of all the items.
+expand-right = false
+
+label-open = ^
+label-close = X
+label-separator = -
+format-spacing = 1
+; "menu-LEVEL-N" has the same properties as "label-NAME" with
+; the additional "exec" property
+;
+; Commands will be executed using "/bin/sh -c $COMMAND"
+
+menu-0-0 = Shutdown
+menu-0-0-exec = shutdown now
+menu-0-1 = Hibernate
+menu-0-1-exec = systemctl hibernate
+menu-0-2 = Terminal
+menu-0-2-exec = kitty
+
+menu-1-0 = Firefox
+menu-1-0-exec = firefox
+menu-1-1 = Chromium
+menu-1-1-exec = chromium
+
+menu-2-0 = Gimp
+menu-2-0-exec = gimp
+menu-2-1 = Scrot
+menu-2-1-exec = scrot
 
 [module/updates-arch-combined]
 type = custom/script
