@@ -146,6 +146,9 @@ super + n
 super + a
 	tdrop -ma -w 90% -h 90% -x 5% -y 5% -n 2 -s mail kitty
 
+super + r
+	tdrop -ma -w 90% -h 90% -x 5% -y 5% qutebrowser
+# Open password manager
 super + x
 	/home/magnias/Scripts/rofi_rbw.py
 

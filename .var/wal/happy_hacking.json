@@ -1,0 +1,24 @@
+{
+  "name": "happy_hacking",
+  "author": "Yorick Peterse",
+  "color": [
+     "230",
+     "#F05E48",
+     "#8daf67",
+     "#FAD566",
+     "#81A2C7",
+     "#F77EBD",
+     "#B3EBBF",
+     "#F3F2CC",
+     "#000000",
+     "#F05E48",
+     "#8daf67",
+     "#FAD566",
+     "#81A2C7",
+     "#F77EBD",
+     "#B3EBBF",
+     "#F3F2CC"
+  ],
+  "foreground": "#F05E48",
+  "background": "#000000"
+}

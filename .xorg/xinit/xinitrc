@@ -1,8 +1,7 @@
 #!/bin/sh
 
-xrandr --auto --dpi 100 --output eDP-1-1 --mode 1920x1080 --left-of HDMI-1-2
 # xrandr --auto
-autorandr
+#autorandr
 # xrandr --setprovideroutputsource modesetting NVIDIA-0
 # xrandr --auto
 
@@ -38,4 +37,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-exec bspwm
+#xrandr --auto --dpi 100 --output eDP-1-1 --mode 1920x1080 --left-of HDMI-1-2
+
+autorandr --change
+prime-offload &
+bspwm
+sudo prime-switch
+
