@@ -29,6 +29,7 @@ Plug 'liuchengxu/vista.vim' " LSP browser
 Plug 'machakann/vim-highlightedyank'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Highlighting for types
 Plug 'lervag/vimtex'
+Plug 'tikhomirov/vim-glsl'
 let g:vimtex_compiler_progname = 'nvr'
 
 call plug#end()
@@ -64,13 +65,6 @@ set listchars=tab:\>\ ,trail:-
 " Keybinds {{{
 inoremap kj <Esc>  
 map <C-n> :NERDTreeToggle<CR>
-
-" Tab completion
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " . autocompletion ?
 function! s:check_back_space() abort
