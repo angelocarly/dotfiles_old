@@ -1,0 +1,9 @@
+e scr.utf8=true
+e scr.utf8.curvy=true
+
+# Show assembly instructions explanation
+#e asm.describe=true
+# Show assembly pseudocode
+#e asm.pseudo=true
+
+eco smyck

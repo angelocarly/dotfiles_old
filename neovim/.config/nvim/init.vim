@@ -2,36 +2,37 @@
 " Angelo Carly
 
 " Plugins {{{
-" Specify a directory for plugins For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-surround'
-Plug 'dylanaraps/wal.vim'
-Plug 'justinmk/vim-sneak'
-Plug 'prabirshrestha/async.vim'
-Plug 'neovim/nvim-lspconfig'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Language server
+Plug 'prabirshrestha/async.vim'				" Allow async in vim
+Plug 'prabirshrestha/vim-lsp'				" Enable native vim lsp
+Plug 'mattn/vim-lsp-settings'				
+Plug 'neovim/nvim-lspconfig'				" Quickly setup lsp with lua
 Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'keremc/asyncomplete-clang.vim'
-Plug 'preservim/nerdtree'
-Plug 'flw-cn/vim-nerdtree-l-open-h-close'
-Plug 'rafi/awesome-vim-colorschemes'
-Plug 'raimondi/delimitmate'
-Plug 'liuchengxu/vim-clap'
-Plug 'eagletmt/ghcmod-vim' " Reveal types as you code
-Plug 'Shougo/vimproc'
-Plug 'liuchengxu/vista.vim' " LSP browser
-Plug 'machakann/vim-highlightedyank'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Highlighting for types
+" Other Languages
 Plug 'lervag/vimtex'
 Plug 'tikhomirov/vim-glsl'
+" Navigation
+Plug 'preservim/nerdtree'
+Plug 'flw-cn/vim-nerdtree-l-open-h-close'
+Plug 'liuchengxu/vista.vim' 				" LSP browser
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'					" Make fzf search through entire git project
+" Editor
+Plug 'justinmk/vim-sneak' 					" Jump quickly to a word
+Plug 'tpope/vim-surround' 					" Auto surround apotrophes
+Plug 'raimondi/delimitmate' 				" Auto close brackets
+Plug 'machakann/vim-highlightedyank'		" Mark the region you yanked
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Highlighting for lots of languages
+" Colors and design
+Plug 'vim-airline/vim-airline' 				" Clean statusbar
+Plug 'vim-airline/vim-airline-themes'
+Plug 'dylanaraps/wal.vim'
+Plug 'rafi/awesome-vim-colorschemes'
 let g:vimtex_compiler_progname = 'nvr'
-
 call plug#end()
 " }}}
 
@@ -52,19 +53,25 @@ set hlsearch
 set scrolloff=5
 set tabstop=4
 set softtabstop=0
-set expandtab
+"set expandtab
 set smarttab
 set shiftwidth=4
 set ignorecase
 set hidden
 set list
 set listchars=tab:\>\ ,trail:-
-
 " }}}
 
 " Keybinds {{{
 inoremap kj <Esc>  
 map <C-n> :NERDTreeToggle<CR>
+" fzf
+nnoremap <leader><leader> :GFiles<CR>
+nnoremap <leader>fi       :Files<CR>
+nnoremap <leader>C        :Colors<CR>
+nnoremap <leader><CR>     :Buffers<CR>
+nnoremap <leader>fl       :Lines<CR>
+nnoremap <leader>m        :History<CR>
 
 " . autocompletion ?
 function! s:check_back_space() abort
@@ -77,7 +84,6 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 imap <c-space> <Plug>(asyncomplete_force_refresh)
-
 " }}}
 
 " LUA configuration {{{
