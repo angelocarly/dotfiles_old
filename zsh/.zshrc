@@ -24,13 +24,14 @@ alias cat=bat
 
 # Plugins
 plugins=(
+	docker
 	git
 	fzf
 	colored-man-pages
-	docker
 	zsh-syntax-highlighting
 )
 eval $(thefuck --alias)
+fpath+=($ZSH/plugins/docker)
 
 # Autojump
 [[ -s /home/magnias/.autojump/etc/profile.d/autojump.sh ]] && source /home/magnias/.autojump/etc/profile.d/autojump.sh

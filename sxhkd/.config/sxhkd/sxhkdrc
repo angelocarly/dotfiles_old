@@ -82,7 +82,7 @@ super + {o,i}
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10,virt}' --follow
+	bspc {desktop -f,node -d} '^{1-9,10}' --follow
 
 super + {_,shift + }minus
 	bspc {desktop -f,node -d} 'virt' --follow
@@ -138,7 +138,7 @@ super + equal
 	betterlockscreen -l
 
 super + u
-	tdrop -ma -w 90% -h 90% -x 5% -y 5% -s dropdown kitty -o background_opacity=0.85
+	tdrop -ma -w 90% -h 90% -x 5% -y 5% -s dropdown kitty -o background_opacity=0.9
 
 super + n
 	tdrop -ma -w 90% -h 90% -x 5% -y 5% pavucontrol
