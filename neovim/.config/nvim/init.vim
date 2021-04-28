@@ -37,7 +37,8 @@ call plug#end()
 " }}}
 
 " Colors and theming {{{
-let g:airline_theme='wal'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='atomic'
 colorscheme happy_hacking
 set t_Co=256
 syntax on

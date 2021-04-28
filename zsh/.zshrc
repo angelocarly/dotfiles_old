@@ -21,6 +21,7 @@ alias o="xdg-open"
 alias rep="until !!; do sleep 5 ; done"
 alias nmap="grc sudo nmap"
 alias cat=bat
+source $HOME/.nvm/nvm.sh
 
 # Plugins
 plugins=(
