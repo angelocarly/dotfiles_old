@@ -1,7 +1,5 @@
 export EDITOR="nvim"
 export ZSH="/home/magnias/.oh-my-zsh"
-export PYTHONPATH=$PYTHONPATH:/home/magnias/.config/dev/python/python-files
-export KALI=root@192.168.122.30
 
 ZSH_THEME="blinks-mag"
 
@@ -11,8 +9,9 @@ alias rbt="sudo -k reboot now"
 alias wttr="curl https://wttr.in/ghent"
 alias vim="nvim"
 alias svim="sudoedit"
-alias p="python"
-alias ssh="try kitty +kitten ssh"
+alias p="ipython"
+#alias ssh="try kitty +kitten ssh"
+alias ssh="kitty +kitten ssh"
 alias imcat="kitty +kitten icat"
 alias isw="sudo isw"
 alias clk="tty-clock -t -c -C 3 -B"
@@ -21,7 +20,6 @@ alias o="xdg-open"
 alias rep="until !!; do sleep 5 ; done"
 alias nmap="grc sudo nmap"
 alias cat=bat
-source $HOME/.nvm/nvm.sh
 
 # Plugins
 plugins=(
@@ -29,7 +27,7 @@ plugins=(
 	git
 	fzf
 	colored-man-pages
-	zsh-syntax-highlighting
+#zsh-syntax-highlighting
 )
 eval $(thefuck --alias)
 fpath+=($ZSH/plugins/docker)

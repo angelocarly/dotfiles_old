@@ -1,9 +1,9 @@
 #! /bin/sh
 wal -Rq
+xrandr --auto --output HDMI-0 --rate 144.00 --mode 2560x1440 --right-of VGA-0
 
-## Unmap caps lock
 numlockx on &
-setxkbmap -option caps:super
+xsetroot -solid "#FFFFFF"
 
 pkill sxhkd
 sxhkd &
@@ -51,6 +51,7 @@ bspc rule -a Zathura state=tiled
 bspc rule --add scratchpad sticky=true
 bspc rule -a Vivaldi-stable desktop=^1
 bspc rule -a discord desktop=^2
+bspc rule -a Spotify desktop=^3
 bspc rule -a mpv state=floating
 
 #@ Monitor config
@@ -67,7 +68,7 @@ tmux new-session -d -s mail neomutt &
 pkill dunst
 dunst &
 #autorandr -c &
-#feh --bg-fill ~/.config/wallpapers/current &
+feh --bg-fill ~/.config/wallpapers/current &
 hsetroot -solid '#090909'
 $HOME/.config/polybar/launch.sh $
 picom --config ~/.config/picom/picom.conf &

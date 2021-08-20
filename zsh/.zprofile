@@ -5,6 +5,8 @@ export XDG_CONFIG_HOME
 export PATH="$HOME/Scripts:$HOME/.cargo/bin:/home/magnias/.local/bin:$PATH"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export TERM="xterm-kitty"
+export XCURSOR_PATH="/usr/share/icons"
+export KVM="/mnt/data/kvm"
 
 # setxkbmap -model pc104 -layout us,us -variant colemak, -option grp:shifts_toggle
 
