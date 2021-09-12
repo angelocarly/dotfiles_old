@@ -123,6 +123,11 @@ element-icon {
     text-color: @alternate-active-foreground;
 }
 
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
 #scrollbar {
     width: 4px;
     border: 0;
