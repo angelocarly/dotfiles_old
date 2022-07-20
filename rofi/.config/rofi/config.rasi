@@ -1,5 +1,5 @@
 configuration{
-	theme: "~/.cache/wal/colors-rofi-dark-magnias.rasi";
 }
 
+@theme "~/.cache/wal/colors-rofi-dark-magnias.rasi"
 

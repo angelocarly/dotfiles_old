@@ -178,9 +178,9 @@ super + ctrl + {p,o}
 
 # numpad keys to control volume
 super + KP_Add
-	amixer -D pulse sset Master 5%+
+	amixer sset Master 5%+
 super + KP_Subtract
-	amixer -D pulse sset Master 5%-
+	amixer sset Master 5%-
 # Arrow keys to control media
 super + {Left,Down,Up,Right}
 	playerctl {previous,play-pause,stop,next}
@@ -188,10 +188,10 @@ super + ctrl + {Left,Down,Up,Right}
 	mpc {prev,toggle,stop,next}
 # Bind XF86 keys
 XF86AudioRaiseVolume 
-	amixer -D pulse sset Master 5%+
+	amixer sset Master 5%+
 XF86AudioLowerVolume 
-	amixer -D pulse sset Master 5%-
+	amixer sset Master 5%-
 XF86AudioMute 
-	amixer -D pulse set Master 1+ toggle
+	amixer set Master 1+ toggle
 XF86Audio{Play,Stop,Prev,Next} 
 	playerctl {play-pause,stop,previous,next}

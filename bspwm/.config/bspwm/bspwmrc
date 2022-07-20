@@ -2,7 +2,7 @@
 
 ## Unmap caps lock
 numlockx on &
-setxkbmap -option caps:super
+xsetroot -cursor_name left_ptr
 
 pkill sxhkd
 sxhkd &
@@ -51,13 +51,18 @@ bspc rule -a Zathura state=tiled
 bspc rule --add scratchpad sticky=true
 bspc rule -a Vivaldi-stable desktop=^1
 bspc rule -a discord desktop=^2
+bspc rule -a Spotify desktop=^3
 bspc rule -a mpv state=floating
+bspc rule -a feh state=floating
+bspc rule -a OFEngine state=floating
+bspc rule -a cinder state=floating
 
 #@ Add virtual monitor
 #bspc wm -a virt 3840x1060+0+20
 #bspc monitor virt -d virt
 #@ Monitor config
 /home/magnias/.config/bspwm/monitor_setup.sh
+xrandr --output eDP1 --gamma 0.92:0.91:1
 #@ Reorder monitors to end with virt
 bspc wm -O $(xrandr | awk '/ connected/{print $1}' | tr '\n' ' ')
 
@@ -66,15 +71,15 @@ xsetroot -cursor_name left_ptr &
 xset r rate 250 30
 
 ## Launch applications
-tmux new-session -d -s protonbridge protonmail-bridge -c &
-tmux new-session -d -s mail neomutt &
+#tmux new-session -d -s protonbridge protonmail-bridge -c &
+#tmux new-session -d -s mail neomutt &
 dunst &
 #autorandr -c &
-feh --bg-fill ~/.config/wallpapers/current &
+feh --bg-fill ~/.config/wallpapers/current --no-startup-id &
 wal -Rq
 $HOME/.config/polybar/launch.sh $
 picom --config ~/.config/picom/picom.conf &
-xsetwacom --set "Wacom Bamboo One S Pen stylus" MapToOutput 1920x1080+0+0
+#xsetwacom --set "Wacom Bamboo One S Pen stylus" MapToOutput 1920x1080+0+0
 
 #$ Colors
 . "${HOME}/.cache/wal/colors.sh"

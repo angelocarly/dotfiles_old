@@ -12,7 +12,7 @@ alias wttr="curl https://wttr.in/ghent"
 alias vim="nvim"
 alias svim="sudoedit"
 alias p="python"
-alias ssh="try kitty +kitten ssh"
+alias ssh="kitty +kitten ssh"
 alias imcat="kitty +kitten icat"
 alias isw="sudo isw"
 alias clk="tty-clock -t -c -C 3 -B"
@@ -20,20 +20,23 @@ alias dragon="dragon-drag-and-drop"
 alias o="xdg-open"
 alias rep="until !!; do sleep 5 ; done"
 alias nmap="grc sudo nmap"
+alias tlp="sudo tlp"
+alias cat="bat"
+alias vimconf="nvim ~/.config/nvim/init.vim"
+alias bmake="bear -- make"
 
 # Plugins
 plugins=(
 	git
 	fzf
-	colored-man-pages
 	docker
 	zsh-syntax-highlighting
 )
 eval $(thefuck --alias)
 
 # Autojump
-[[ -s /home/magnias/.autojump/etc/profile.d/autojump.sh ]] && source /home/magnias/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
+#[[ -s /home/magnias/.autojump/etc/profile.d/autojump.sh ]] && source /home/magnias/.autojump/etc/profile.d/autojump.sh
+#autoload -U compinit && compinit -u
 
 export ARCHFLAGS="-arch x86_64"
 

@@ -1,9 +1,9 @@
 * {
-    active-background: #94e76b;
+    active-background: #b8d68c;
     active-foreground: @foreground;
     normal-background: @background;
     normal-foreground: @foreground;
-    urgent-background: #eb4509;
+    urgent-background: #e84f4f;
     urgent-foreground: @foreground;
 
     alternate-active-background: @background;
@@ -13,16 +13,16 @@
     alternate-urgent-background: @background;
     alternate-urgent-foreground: @foreground;
 
-    selected-active-background: #eb4509;
+    selected-active-background: #b8d68c;
     selected-active-foreground: @foreground;
-    selected-normal-background: #94e76b;
+    selected-normal-background: #e1aa5d;
     selected-normal-foreground: @foreground;
-    selected-urgent-background: #ffac18;
+    selected-urgent-background: #b8d68c;
     selected-urgent-foreground: @foreground;
 
     background-color: @background;
-    background: #ffffff;
-    foreground: #000000;
+    background: #000000;
+    foreground: #ffffff;
     border-color: @background;
     spacing: 2;
 }
@@ -90,7 +90,7 @@
 
 #element.selected.normal {
     background-color: @selected-normal-background;
-    text-color: @selected-normal-foreground;
+    text-color: @background;
 }
 
 #element.selected.urgent {
@@ -116,6 +116,11 @@
 #element.alternate.active {
     background-color: @alternate-active-background;
     text-color: @alternate-active-foreground;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
 }
 
 #scrollbar {
